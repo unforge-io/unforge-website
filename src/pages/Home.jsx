@@ -155,23 +155,14 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.65, ease: 'easeOut' }}
           >
-            <div
-              className="rounded-xl overflow-hidden video-teal-glow"
-              style={{
-                border: '2px solid #1D9E75',
-                borderRadius: '12px',
-              }}
-            >
-              <video
-                src="/unforge-explainer.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full block"
-                style={{ borderRadius: '10px', display: 'block' }}
-              />
-            </div>
+            <video
+              src="/unforge-explainer.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full rounded-xl border-2 border-teal-500"
+            />
           </motion.div>
 
         </div>
