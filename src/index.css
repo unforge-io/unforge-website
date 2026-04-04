@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(1.5); }
+}
+
+@keyframes teal-glow {
+  0%, 100% {
+    box-shadow: 0 0 18px rgba(29,158,117,0.25), 0 0 40px rgba(29,158,117,0.10);
+  }
+  50% {
+    box-shadow: 0 0 32px rgba(29,158,117,0.45), 0 0 70px rgba(29,158,117,0.20);
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #0A0F1E;
+    font-family: 'DM Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', sans-serif;
+    line-height: 1.3;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    overflow: visible;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+}
+
+@layer components {
+  .pulse-dot {
+    animation: pulse-dot 1.8s ease-in-out infinite;
+  }
+
+  .video-teal-glow {
+    animation: teal-glow 3s ease-in-out infinite;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-uf-teal text-white font-sans font-medium px-6 py-3 rounded-lg transition-all duration-200;
+  }
+
+  .btn-primary:hover {
+    background-color: #178a64;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-uf-teal text-uf-teal font-sans font-medium px-6 py-3 rounded-lg transition-all duration-200;
+  }
+
+  .btn-outline:hover {
+    background-color: #1D9E75;
+    color: white;
+  }
+
+  .card-white {
+    @apply bg-white border border-uf-border rounded-xl;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+  }
+
+  .section-label {
+    @apply text-uf-teal font-sans font-semibold tracking-widest text-xs uppercase;
+  }
+}
