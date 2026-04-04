@@ -155,14 +155,19 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.65, ease: 'easeOut' }}
           >
-            <video
-              src="/unforge-explainer.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full rounded-xl border-2 border-teal-500"
-            />
+            {(() => {
+              const videoUrl = new URL('/unforge-explainer.mp4', import.meta.url).href
+              return (
+                <video
+                  src={videoUrl}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  style={{ width: '100%', borderRadius: '0.75rem', border: '2px solid #1D9E75' }}
+                />
+              )
+            })()}
           </motion.div>
 
         </div>
