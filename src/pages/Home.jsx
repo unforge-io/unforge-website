@@ -156,7 +156,7 @@ export default function Home() {
             transition={{ delay: 0.4, duration: 0.65, ease: 'easeOut' }}
           >
             <video
-              src="/public/unforge-explainer.mp4"
+              src="/unforge-explainer.mp4"
               autoPlay
               muted
               loop
