@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
@@ -44,6 +45,29 @@ const STRIDE_THREATS = [
 const ABSTRACT = `The rapid proliferation of autonomous AI agents operating within complex multi-agent systems has exposed critical security vulnerabilities in existing authorization frameworks. Current OAuth 2.0 implementations fail to address agent-specific threats including identity spoofing, prompt injection, and delegation chain manipulation. This paper presents Agentic JWT, a novel security protocol that extends OAuth 2.0 to provide cryptographic identity for individual AI agents, intent binding for every API call, and verifiable delegation chain integrity. The protocol introduces three new token types — Agent Registration Token, Intent Token, and Delegation Token — evaluated against a STRIDE threat model comprising 12 threat categories. Experimental results demonstrate 100% threat mitigation across all STRIDE categories with a total security overhead of 18.15ms, representing a 25.5% improvement in overall workflow execution time versus baseline due to eliminated re-authentication cycles. The protocol maintains full backward compatibility with existing OAuth 2.0 infrastructure.`
 
 export default function TechDocs() {
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            video.play()
+          } else {
+            video.pause()
+          }
+        })
+      },
+      { threshold: 0.5 }
+    )
+
+    observer.observe(video)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <div>
 
@@ -82,37 +106,17 @@ export default function TechDocs() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Product Overview */}
-            <motion.div {...fadeUp(0.05)}>
-              <p className="font-syne font-semibold text-sm text-uf-navy mb-3 uppercase tracking-wide">
-                Product Overview
-              </p>
-              <video
-                src="/unforge-explainer.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                style={{ width: '100%', borderRadius: '12px', display: 'block', border: '2px solid #1D9E75' }}
-              />
-            </motion.div>
-
-            {/* Securing the AI Workforce */}
-            <motion.div {...fadeUp(0.1)}>
-              <p className="font-syne font-semibold text-sm text-uf-navy mb-3 uppercase tracking-wide">
-                Securing the AI Workforce
-              </p>
-              <video
-                src="/Securing_the_AI_Workforce.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                style={{ width: '100%', borderRadius: '12px', display: 'block', border: '2px solid #1D9E75' }}
-              />
-            </motion.div>
-          </div>
+          <motion.div {...fadeUp(0.05)} style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <p className="font-syne font-semibold text-sm text-uf-navy mb-3 uppercase tracking-wide">
+              Securing the AI Workforce
+            </p>
+            <video
+              ref={videoRef}
+              src="/Securing_the_AI_Workforce.mp4"
+              controls
+              style={{ width: '100%', maxWidth: '900px', borderRadius: '12px', display: 'block', margin: '0 auto' }}
+            />
+          </motion.div>
         </div>
       </section>
 
