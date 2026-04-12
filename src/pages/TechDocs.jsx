@@ -89,7 +89,7 @@ export default function TechDocs() {
                 Product Overview
               </p>
               <video
-                src="/Public/unforge-explainer.mp4"
+                src="/public/unforge-explainer.mp4"
                 autoPlay
                 muted
                 loop
@@ -104,7 +104,7 @@ export default function TechDocs() {
                 Securing the AI Workforce
               </p>
               <video
-                src="/Public/Securing_the_AI_Workforce.mp4"
+                src="/public/Securing_the_AI_Workforce.mp4"
                 autoPlay
                 muted
                 loop
