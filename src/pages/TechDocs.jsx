@@ -8,24 +8,42 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.55, delay, ease: 'easeOut' },
 })
 
+const PUBLICATIONS = [
+  {
+    title: 'Agentic JWT: A Secure Delegation Protocol for Autonomous AI Agents',
+    label: 'arXiv:2509.13597',
+    href: 'https://arxiv.org/abs/2509.13597',
+  },
+  {
+    title: 'IETF Draft: Secure Intent Protocol: JWT Compatible Agentic Identity and Workflow Management',
+    label: 'IETF Draft',
+    href: 'https://datatracker.ietf.org/doc/draft-goswami-agentic-jwt/',
+  },
+  {
+    title: 'Securing LLM Applications: Beyond the New OWASP LLM Top 10',
+    label: 'DZone · September 11, 2025',
+    href: 'https://dzone.com/articles/securing-llm-applications-owasp',
+  },
+]
+
 const STRIDE_THREATS = [
-  { id: 'T1',  name: 'Agent Identity Spoofing',          category: 'Spoofing',                  result: 'Blocked' },
-  { id: 'T2',  name: 'Token Replay Attacks',             category: 'Spoofing',                  result: 'Blocked' },
-  { id: 'T3',  name: 'Shim Library Impersonation',       category: 'Spoofing',                  result: 'Blocked' },
-  { id: 'T4',  name: 'Runtime Code Modification',        category: 'Tampering',                 result: 'Blocked' },
-  { id: 'T5',  name: 'Prompt Injection Attacks',         category: 'Tampering',                 result: 'Blocked' },
-  { id: 'T6',  name: 'Workflow Definition Tampering',    category: 'Tampering',                 result: 'Blocked' },
-  { id: 'T7',  name: 'Cross-Agent Privilege Escalation', category: 'Elevation of Privilege',    result: 'Blocked' },
-  { id: 'T8',  name: 'Workflow Step Bypass',             category: 'Elevation of Privilege',    result: 'Blocked' },
-  { id: 'T9',  name: 'Scope Inflation',                  category: 'Elevation of Privilege',    result: 'Blocked' },
-  { id: 'T10', name: 'Intent Origin Forgery',            category: 'Repudiation',               result: 'Blocked' },
-  { id: 'T11', name: 'Delegation Chain Manipulation',    category: 'Repudiation',               result: 'Blocked' },
-  { id: 'T12', name: 'Agent Configuration Exposure',     category: 'Information Disclosure',    result: 'Blocked' },
+  { id: 'T1',  name: 'Agent Identity Spoofing',          category: 'Spoofing',               result: 'Blocked' },
+  { id: 'T2',  name: 'Token Replay Attacks',             category: 'Spoofing',               result: 'Blocked' },
+  { id: 'T3',  name: 'Shim Library Impersonation',       category: 'Spoofing',               result: 'Blocked' },
+  { id: 'T4',  name: 'Runtime Code Modification',        category: 'Tampering',              result: 'Blocked' },
+  { id: 'T5',  name: 'Prompt Injection Attacks',         category: 'Tampering',              result: 'Blocked' },
+  { id: 'T6',  name: 'Workflow Definition Tampering',    category: 'Tampering',              result: 'Blocked' },
+  { id: 'T7',  name: 'Cross-Agent Privilege Escalation', category: 'Elevation of Privilege', result: 'Blocked' },
+  { id: 'T8',  name: 'Workflow Step Bypass',             category: 'Elevation of Privilege', result: 'Blocked' },
+  { id: 'T9',  name: 'Scope Inflation',                  category: 'Elevation of Privilege', result: 'Blocked' },
+  { id: 'T10', name: 'Intent Origin Forgery',            category: 'Repudiation',            result: 'Blocked' },
+  { id: 'T11', name: 'Delegation Chain Manipulation',    category: 'Repudiation',            result: 'Blocked' },
+  { id: 'T12', name: 'Agent Configuration Exposure',     category: 'Information Disclosure', result: 'Blocked' },
 ]
 
 const ABSTRACT = `The rapid proliferation of autonomous AI agents operating within complex multi-agent systems has exposed critical security vulnerabilities in existing authorization frameworks. Current OAuth 2.0 implementations fail to address agent-specific threats including identity spoofing, prompt injection, and delegation chain manipulation. This paper presents Agentic JWT, a novel security protocol that extends OAuth 2.0 to provide cryptographic identity for individual AI agents, intent binding for every API call, and verifiable delegation chain integrity. The protocol introduces three new token types — Agent Registration Token, Intent Token, and Delegation Token — evaluated against a STRIDE threat model comprising 12 threat categories. Experimental results demonstrate 100% threat mitigation across all STRIDE categories with a total security overhead of 18.15ms, representing a 25.5% improvement in overall workflow execution time versus baseline due to eliminated re-authentication cycles. The protocol maintains full backward compatibility with existing OAuth 2.0 infrastructure.`
 
-export default function Research() {
+export default function TechDocs() {
   return (
     <div>
 
@@ -37,18 +55,133 @@ export default function Research() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="section-label">Research</span>
+            <span className="section-label">Documentation</span>
             <h1
-              className="font-syne font-bold text-3xl md:text-4xl lg:text-5xl text-uf-navy mt-5 mb-4"
+              className="font-syne font-bold text-4xl md:text-5xl text-uf-navy mt-5 mb-5"
+              style={{ lineHeight: 1.4, paddingBottom: '0.1em', overflow: 'visible' }}
+            >
+              Technical Docs
+            </h1>
+            <p className="font-sans text-uf-body text-lg leading-relaxed max-w-2xl">
+              Research, standards, and product resources for building with Agentic JWT and Unforge.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── VIDEOS ────────────────────────────────────────────────────── */}
+      <section className="bg-uf-alt py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+          <motion.div {...fadeUp()} className="mb-10">
+            <span className="section-label">Videos</span>
+            <h2
+              className="font-syne font-bold text-2xl md:text-3xl text-uf-navy mt-4"
+              style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
+            >
+              Watch &amp; Learn
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Product Overview */}
+            <motion.div {...fadeUp(0.05)}>
+              <p className="font-syne font-semibold text-sm text-uf-navy mb-3 uppercase tracking-wide">
+                Product Overview
+              </p>
+              <video
+                src="/Public/unforge-explainer.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{ width: '100%', borderRadius: '12px', display: 'block', border: '2px solid #1D9E75' }}
+              />
+            </motion.div>
+
+            {/* Securing the AI Workforce */}
+            <motion.div {...fadeUp(0.1)}>
+              <p className="font-syne font-semibold text-sm text-uf-navy mb-3 uppercase tracking-wide">
+                Securing the AI Workforce
+              </p>
+              <video
+                src="/Public/Securing_the_AI_Workforce.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{ width: '100%', borderRadius: '12px', display: 'block', border: '2px solid #1D9E75' }}
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── PUBLICATIONS & STANDARDS ──────────────────────────────────── */}
+      <section className="bg-white py-24 px-6">
+        <div className="max-w-4xl mx-auto">
+          <motion.div {...fadeUp()}>
+            <span className="section-label">Publications &amp; Standards</span>
+            <h2
+              className="font-syne font-bold text-2xl md:text-3xl text-uf-navy mt-4 mb-10"
+              style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
+            >
+              Research &amp; Standards
+            </h2>
+
+            <div className="space-y-4">
+              {PUBLICATIONS.map((pub, i) => (
+                <motion.a
+                  key={pub.href}
+                  href={pub.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  {...fadeUp(i * 0.08)}
+                  whileHover={{ y: -3, boxShadow: '0 8px 24px rgba(0,0,0,0.09)' }}
+                  className="card-white rounded-xl p-6 flex items-start justify-between gap-6 transition-all duration-300 block"
+                >
+                  <div className="flex-1">
+                    <p
+                      className="font-syne font-semibold text-base text-uf-navy mb-2"
+                      style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
+                    >
+                      {pub.title}
+                    </p>
+                    <span className="font-sans text-xs font-medium text-uf-teal bg-white border border-uf-teal px-3 py-1 rounded-full">
+                      {pub.label}
+                    </span>
+                  </div>
+                  <span className="text-uf-teal font-sans text-lg shrink-0 mt-1">↗</span>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════════
+          RESEARCH
+      ════════════════════════════════════════════════════════════════ */}
+
+      {/* ── RESEARCH HEADER ───────────────────────────────────────────── */}
+      <section className="bg-uf-alt py-24 px-6 border-t border-uf-border">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="section-label">Research</span>
+            <h2
+              className="font-syne font-bold text-3xl md:text-4xl text-uf-navy mt-5 mb-4"
               style={{ lineHeight: 1.4, paddingBottom: '0.1em', overflow: 'visible' }}
             >
               Agentic JWT: A Secure Delegation Protocol for Autonomous AI Agents
-            </h1>
+            </h2>
             <p className="font-sans text-uf-body text-lg mb-8">
               Abhishek Goswami · Senior Member IEEE
             </p>
 
-            {/* Publication badges */}
             <div className="flex flex-wrap gap-3">
               <a
                 href="https://arxiv.org/abs/2509.13597"
@@ -67,7 +200,7 @@ export default function Research() {
       </section>
 
       {/* ── ABSTRACT ──────────────────────────────────────────────────── */}
-      <section className="bg-uf-alt py-20 px-6">
+      <section className="bg-white py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div {...fadeUp()}>
             <h2
@@ -77,7 +210,7 @@ export default function Research() {
               Abstract
             </h2>
             <blockquote
-              className="bg-white border-l-4 border-uf-teal rounded-r-xl p-8"
+              className="bg-uf-alt border-l-4 border-uf-teal rounded-r-xl p-8"
               style={{ boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}
             >
               <p className="font-sans text-uf-body leading-relaxed">
@@ -88,8 +221,8 @@ export default function Research() {
         </div>
       </section>
 
-      {/* ── FIVE CONTRIBUTIONS ────────────────────────────────────────── */}
-      <section className="bg-white py-24 px-6">
+      {/* ── KEY CONTRIBUTIONS ─────────────────────────────────────────── */}
+      <section className="bg-uf-alt py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div {...fadeUp()} className="mb-12">
             <h2
@@ -156,7 +289,7 @@ export default function Research() {
       </section>
 
       {/* ── CORE INSIGHT ──────────────────────────────────────────────── */}
-      <section className="bg-uf-alt py-20 px-6">
+      <section className="bg-white py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div {...fadeUp()}>
             <h2
@@ -166,7 +299,7 @@ export default function Research() {
               The Core Insight: Intent-Execution Separation
             </h2>
             <p className="font-sans text-uf-body leading-relaxed text-lg mb-6">
-              OAuth 2.0 grants a token with a scope — <code className="font-mono text-sm bg-white border border-uf-border px-1.5 py-0.5 rounded text-uf-teal">read:files</code>.
+              OAuth 2.0 grants a token with a scope — <code className="font-mono text-sm bg-uf-alt border border-uf-border px-1.5 py-0.5 rounded text-uf-teal">read:files</code>.
               That token is then used by an agent to take actions. But the token says nothing about
               <em> which workflow step</em> authorized the action, <em>which specific agent</em> is executing it,
               or <em>whether the original user intended</em> this exact operation.
@@ -186,8 +319,8 @@ export default function Research() {
         </div>
       </section>
 
-      {/* ── TOKEN SUITE ───────────────────────────────────────────────── */}
-      <section className="bg-white py-24 px-6">
+      {/* ── THE INTENT TOKEN ──────────────────────────────────────────── */}
+      <section className="bg-uf-alt py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div {...fadeUp()} className="mb-8">
             <h2
@@ -237,7 +370,7 @@ export default function Research() {
       </section>
 
       {/* ── STRIDE TABLE ──────────────────────────────────────────────── */}
-      <section className="bg-uf-alt py-24 px-6">
+      <section className="bg-white py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div {...fadeUp()} className="mb-10">
             <h2
@@ -255,10 +388,10 @@ export default function Research() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-uf-teal">
-                  <th className="text-left py-3.5 px-6 font-syne font-semibold text-white text-xs uppercase tracking-wider">ID</th>
+                  <th className="text-left py-3.5 px-6 font-syne font-semibold text-white text-xs uppercase tracking-wider rounded-tl-xl">ID</th>
                   <th className="text-left py-3.5 px-6 font-syne font-semibold text-white text-xs uppercase tracking-wider">Threat</th>
                   <th className="text-left py-3.5 px-6 font-syne font-semibold text-white text-xs uppercase tracking-wider hidden sm:table-cell">Category</th>
-                  <th className="text-left py-3.5 px-6 font-syne font-semibold text-white text-xs uppercase tracking-wider">Result</th>
+                  <th className="text-left py-3.5 px-6 font-syne font-semibold text-white text-xs uppercase tracking-wider rounded-tr-xl">Result</th>
                 </tr>
               </thead>
               <tbody>
@@ -271,9 +404,7 @@ export default function Research() {
                     <td className="py-3.5 px-6 font-sans text-uf-navy">{t.name}</td>
                     <td className="py-3.5 px-6 font-sans text-uf-body hidden sm:table-cell">{t.category}</td>
                     <td className="py-3.5 px-6">
-                      <span className="font-sans text-xs font-semibold text-uf-teal">
-                        {t.result}
-                      </span>
+                      <span className="font-sans text-xs font-semibold text-uf-teal">{t.result}</span>
                     </td>
                   </tr>
                 ))}
@@ -284,7 +415,7 @@ export default function Research() {
       </section>
 
       {/* ── PERFORMANCE ───────────────────────────────────────────────── */}
-      <section className="bg-white py-24 px-6">
+      <section className="bg-uf-alt py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div {...fadeUp()} className="mb-12">
             <h2
@@ -319,8 +450,8 @@ export default function Research() {
         </div>
       </section>
 
-      {/* ── LINKS ─────────────────────────────────────────────────────── */}
-      <section className="bg-uf-alt py-20 px-6 border-t border-uf-border">
+      {/* ── RESEARCH LINKS ────────────────────────────────────────────── */}
+      <section className="bg-white py-20 px-6 border-t border-uf-border">
         <div className="max-w-4xl mx-auto">
           <motion.div {...fadeUp()} className="flex flex-wrap gap-4">
             <a

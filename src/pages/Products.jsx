@@ -22,7 +22,7 @@ export default function Products() {
           <span className="section-label">Our Products</span>
           <h1
             className="font-syne font-bold text-4xl md:text-5xl text-uf-navy mt-5 mb-5"
-            style={{ lineHeight: 1.3, overflow: 'visible' }}
+            style={{ lineHeight: 1.4, paddingBottom: '0.1em', overflow: 'visible' }}
           >
             Security infrastructure<br className="hidden sm:block" /> for the agentic era
           </h1>
@@ -30,25 +30,25 @@ export default function Products() {
             Two products. One mission: make agentic AI systems identifiable, accountable, and auditable.
           </p>
           <div className="flex justify-center gap-4">
-            <a href="#novaauth" className="btn-primary">NovaAuth</a>
-            <a href="#patchet"  className="btn-outline">Patchet</a>
+            <a href="#auth51" className="btn-primary">Auth51</a>
+            <a href="#patchet" className="btn-outline">Patchet</a>
           </div>
         </motion.div>
       </section>
 
-      {/* ── NOVAAUTH ──────────────────────────────────────────────────── */}
-      <section id="novaauth" className="bg-white py-28 px-6">
+      {/* ── AUTH51 ────────────────────────────────────────────────────── */}
+      <section id="auth51" className="bg-white py-28 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeUp()}>
             <span className="section-label">Product 01</span>
             <h2
               className="font-syne font-bold text-4xl md:text-5xl text-uf-navy mt-4 mb-5"
-              style={{ lineHeight: 1.3 }}
+              style={{ lineHeight: 1.4, paddingBottom: '0.2em' }}
             >
-              NovaAuth
+              Auth51
             </h2>
             <p className="font-sans text-uf-body text-lg leading-relaxed max-w-3xl mb-14">
-              The commercial implementation of the Agentic JWT protocol. NovaAuth gives every AI agent
+              The commercial implementation of the Agentic JWT protocol. Auth51 gives every AI agent
               in your system a cryptographic identity, issues Intent Tokens binding each API call to an
               approved workflow step, and enforces delegation chain integrity end-to-end.
             </p>
@@ -58,7 +58,7 @@ export default function Products() {
           <motion.div {...fadeUp(0.1)} className="mb-16">
             <h3
               className="font-syne font-semibold text-xl text-uf-navy mb-8"
-              style={{ lineHeight: 1.3 }}
+              style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
             >
               How it works
             </h3>
@@ -67,7 +67,7 @@ export default function Products() {
                 {
                   step: '01',
                   title: 'Agent Registration',
-                  body: 'Each agent registers with the NovaAuth IDP and receives a unique agent_checksum — a cryptographic fingerprint of its code, version, and configuration.',
+                  body: 'Each agent registers with the Auth51 IDP and receives a unique agent_checksum — a cryptographic fingerprint of its code, version, and configuration.',
                 },
                 {
                   step: '02',
@@ -77,7 +77,7 @@ export default function Products() {
                 {
                   step: '03',
                   title: 'Intent Token Issuance',
-                  body: 'NovaAuth issues a per-call Intent Token binding the API call to: the workflow ID, the current step, the executing agent, and the full delegation chain.',
+                  body: 'Auth51 issues a per-call Intent Token binding the API call to: the workflow ID, the current step, the executing agent, and the full delegation chain.',
                 },
                 {
                   step: '04',
@@ -93,13 +93,13 @@ export default function Products() {
                 >
                   <div
                     className="font-syne font-bold text-3xl text-uf-teal mb-4 select-none"
-                    style={{ lineHeight: 1 }}
+                    style={{ lineHeight: 1, paddingBottom: '0.2em' }}
                   >
                     {item.step}
                   </div>
                   <h4
                     className="font-syne font-semibold text-base text-uf-navy mb-2"
-                    style={{ lineHeight: 1.3 }}
+                    style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
                   >
                     {item.title}
                   </h4>
@@ -113,7 +113,7 @@ export default function Products() {
           <motion.div {...fadeUp(0.2)} className="mb-14">
             <h3
               className="font-syne font-semibold text-xl text-uf-navy mb-8"
-              style={{ lineHeight: 1.3 }}
+              style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
             >
               Key capabilities
             </h3>
@@ -126,7 +126,7 @@ export default function Products() {
                 'Under 20ms total security overhead per API call',
                 'Full backward compatibility with OAuth 2.0 — drop-in deployment',
                 'Integrates with Okta, Auth0, Azure AD, AWS IAM',
-                'Patent pending US 19/315,486',
+                'Two U.S. patents filed in 2025 (Application Nos. 19/204,492 and 19/315,486)',
               ].map(f => (
                 <div key={f} className="flex items-start gap-3 font-sans text-sm text-uf-body">
                   <span className="text-uf-teal mt-0.5 shrink-0 font-bold">✓</span>
@@ -140,7 +140,7 @@ export default function Products() {
           <motion.div {...fadeUp(0.25)}>
             <h3
               className="font-syne font-semibold text-xl text-uf-navy mb-6"
-              style={{ lineHeight: 1.3 }}
+              style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
             >
               Compatible with
             </h3>
@@ -165,7 +165,7 @@ export default function Products() {
             <span className="section-label">Product 02</span>
             <h2
               className="font-syne font-bold text-4xl md:text-5xl text-uf-navy mt-4 mb-5"
-              style={{ lineHeight: 1.3 }}
+              style={{ lineHeight: 1.4, paddingBottom: '0.2em' }}
             >
               Patchet
             </h2>
@@ -180,7 +180,7 @@ export default function Products() {
           <motion.div {...fadeUp(0.1)} className="mb-16">
             <h3
               className="font-syne font-semibold text-xl text-uf-navy mb-8"
-              style={{ lineHeight: 1.3 }}
+              style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
             >
               How it works
             </h3>
@@ -215,13 +215,13 @@ export default function Products() {
                 >
                   <div
                     className="font-syne font-bold text-3xl text-uf-teal mb-4 select-none"
-                    style={{ lineHeight: 1 }}
+                    style={{ lineHeight: 1, paddingBottom: '0.2em' }}
                   >
                     {item.step}
                   </div>
                   <h4
                     className="font-syne font-semibold text-base text-uf-navy mb-2"
-                    style={{ lineHeight: 1.3 }}
+                    style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
                   >
                     {item.title}
                   </h4>
@@ -235,7 +235,7 @@ export default function Products() {
           <motion.div {...fadeUp(0.2)} className="mb-14">
             <h3
               className="font-syne font-semibold text-xl text-uf-navy mb-6"
-              style={{ lineHeight: 1.3 }}
+              style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
             >
               Supported ecosystems
             </h3>
@@ -270,7 +270,7 @@ export default function Products() {
         <motion.div {...fadeUp()} className="max-w-xl mx-auto">
           <h2
             className="font-syne font-bold text-3xl text-uf-navy mb-4"
-            style={{ lineHeight: 1.3 }}
+            style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
           >
             Ready to secure your agents?
           </h2>

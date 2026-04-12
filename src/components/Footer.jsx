@@ -26,7 +26,7 @@ export default function Footer() {
                 Products
               </h4>
               <ul className="flex flex-col gap-2.5">
-                <li><Link to="/products" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">NovaAuth</Link></li>
+                <li><Link to="/products" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">Auth51</Link></li>
                 <li><Link to="/products" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">Patchet</Link></li>
               </ul>
             </div>
@@ -36,8 +36,7 @@ export default function Footer() {
               </h4>
               <ul className="flex flex-col gap-2.5">
                 <li><Link to="/company"  className="font-sans text-sm text-uf-muted hover:text-white transition-colors">About</Link></li>
-                <li><Link to="/founders" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">Founders</Link></li>
-                <li><Link to="/research" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">Research</Link></li>
+                <li><Link to="/docs" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">Technical Docs</Link></li>
               </ul>
             </div>
           </div>
@@ -48,7 +47,7 @@ export default function Footer() {
               Developers
             </h4>
             <ul className="flex flex-col gap-2.5">
-              <li><Link to="/docs" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">Docs</Link></li>
+              <li><Link to="/docs" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">Technical Docs</Link></li>
               <li>
                 <a
                   href="https://github.com/hypernome/patchet"
@@ -60,7 +59,7 @@ export default function Footer() {
                 </a>
               </li>
               <li><Link to="/dashboard" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">API Keys</Link></li>
-              <li><Link to="/dashboard" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">NovaAuth Console</Link></li>
+              <li><Link to="/dashboard" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">Auth51 Console</Link></li>
               <li><Link to="/dashboard" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">Patchet Dashboard</Link></li>
             </ul>
           </div>
@@ -68,7 +67,7 @@ export default function Footer() {
 
         {/* Bottom divider + copyright */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="font-sans text-xs text-uf-muted">Copyright Unforge 2025</p>
+          <p className="font-sans text-xs text-uf-muted">Copyright Unforge 2026</p>
           <div className="flex gap-6">
             <Link to="#" className="font-sans text-xs text-uf-muted hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="#" className="font-sans text-xs text-uf-muted hover:text-white transition-colors">Terms of Service</Link>

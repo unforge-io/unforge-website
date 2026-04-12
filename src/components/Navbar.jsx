@@ -3,11 +3,10 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const NAV_LINKS = [
-  { to: '/products', label: 'Products' },
-  { to: '/research', label: 'Research' },
-  { to: '/founders', label: 'Founders' },
-  { to: '/docs',     label: 'Docs'     },
-  { to: '/company',  label: 'Company'  },
+  { to: '/',        label: 'Home'           },
+  { to: '/products', label: 'Products'       },
+  { to: '/company',  label: 'Company'        },
+  { to: '/docs',     label: 'Technical Docs' },
 ]
 
 export default function Navbar() {
@@ -41,7 +40,10 @@ export default function Navbar() {
         <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
-            <span className="font-syne font-bold text-xl tracking-tight">
+            <span
+              className="font-syne font-bold text-xl tracking-tight"
+              style={{ paddingBottom: '0.15em', lineHeight: '1.5', overflow: 'visible', display: 'inline-block' }}
+            >
               <span className="text-uf-navy">un</span>
               <span className="text-uf-teal">forge</span>
             </span>
@@ -53,6 +55,7 @@ export default function Navbar() {
               <NavLink
                 key={to}
                 to={to}
+                end={to === '/'}
                 className={({ isActive }) =>
                   `font-sans text-sm font-medium transition-colors duration-150 ${
                     isActive ? 'text-uf-teal' : 'text-uf-body hover:text-uf-teal'
@@ -62,24 +65,6 @@ export default function Navbar() {
                 {label}
               </NavLink>
             ))}
-          </div>
-
-          {/* Desktop right actions */}
-          <div className="hidden md:flex items-center gap-4">
-            <Link
-              to="/login"
-              className="font-sans text-sm font-medium text-uf-body hover:text-uf-teal transition-colors duration-150"
-            >
-              Sign In
-            </Link>
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <Link
-                to="/signup"
-                className="btn-primary text-sm px-5 py-2.5"
-              >
-                Request Access
-              </Link>
-            </motion.div>
           </div>
 
           {/* Mobile hamburger */}
@@ -124,6 +109,7 @@ export default function Navbar() {
                   <NavLink
                     key={to}
                     to={to}
+                    end={to === '/'}
                     className={({ isActive }) =>
                       `block py-2.5 font-sans text-sm font-medium transition-colors ${
                         isActive ? 'text-uf-teal' : 'text-uf-body hover:text-uf-teal'
@@ -133,14 +119,6 @@ export default function Navbar() {
                     {label}
                   </NavLink>
                 ))}
-                <div className="mt-4 pt-4 border-t border-uf-border flex flex-col gap-3">
-                  <Link to="/login" className="font-sans text-sm font-medium text-uf-body">
-                    Sign In
-                  </Link>
-                  <Link to="/signup" className="btn-primary text-sm text-center">
-                    Request Access
-                  </Link>
-                </div>
               </div>
             </motion.div>
           )}

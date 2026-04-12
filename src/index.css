@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,6 +19,11 @@
 }
 
 @layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -25,16 +32,19 @@
     background-color: #ffffff;
     color: #0A0F1E;
     font-family: 'DM Sans', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Inter', sans-serif;
     line-height: 1.3;
-    padding-top: 0.1em;
-    padding-bottom: 0.1em;
+    padding-bottom: 0.15em;
     overflow: visible;
+  }
+
+  .nav-logo, [class*="logo"] {
+    overflow: visible;
+    line-height: 1.5;
+    padding-bottom: 0.1em;
   }
 
   p {

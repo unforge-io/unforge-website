@@ -27,7 +27,7 @@ function AnimatedHeadline() {
   return (
     <h1
       className="font-syne font-bold text-5xl md:text-6xl text-uf-navy mb-6"
-      style={{ lineHeight: 1.3, paddingTop: '0.1em', paddingBottom: '0.1em', overflow: 'visible' }}
+      style={{ lineHeight: 1.4, paddingTop: '0.1em', paddingBottom: '0.2em', overflow: 'visible' }}
     >
       {/* Line 1 */}
       <span className="block" style={{ overflow: 'visible' }}>
@@ -120,7 +120,7 @@ export default function Home() {
               className="flex flex-wrap gap-3 mb-7"
             >
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <Link to="/research" className="btn-outline">
+                <Link to="/docs" className="btn-outline">
                   Read the research
                 </Link>
               </motion.div>
@@ -138,7 +138,7 @@ export default function Home() {
               transition={{ delay: 1.1, duration: 0.45 }}
               className="flex flex-wrap gap-3"
             >
-              {['Patent Pending US 19/315,486', '100% STRIDE Coverage'].map(badge => (
+              {['Two U.S. patents filed in 2025 (Application Nos. 19/204,492 and 19/315,486)', '100% STRIDE Coverage'].map(badge => (
                 <span
                   key={badge}
                   className="font-sans text-xs font-medium text-uf-teal bg-white border border-uf-teal px-3.5 py-1.5 rounded-full"
@@ -155,19 +155,14 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.65, ease: 'easeOut' }}
           >
-            {(() => {
-              const videoUrl = new URL('/unforge-explainer.mp4', import.meta.url).href
-              return (
-                <video
-                  src={videoUrl}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  style={{ width: '100%', borderRadius: '0.75rem', border: '2px solid #1D9E75' }}
-                />
-              )
-            })()}
+            <video
+              src="/Public/unforge-explainer.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              style={{ width: '100%', borderRadius: '12px', display: 'block', border: '2px solid #1D9E75' }}
+            />
           </motion.div>
 
         </div>
@@ -178,7 +173,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
           <span className="font-sans text-sm text-uf-muted shrink-0">Built on standards from</span>
           <div className="flex flex-wrap gap-3 items-center">
-            {['OAuth 2.0', 'NIST SP 800-207', 'OWASP Top 10', 'IEEE Access', 'IETF RFC 6749'].map(s => (
+            {['OAuth 2.0', 'NIST SP 800-207', 'OWASP Top 10', 'IETF RFC 6749'].map(s => (
               <span
                 key={s}
                 className="font-sans text-xs font-medium text-uf-teal bg-white border border-uf-teal px-3.5 py-1.5 rounded-full"
@@ -197,7 +192,7 @@ export default function Home() {
             <SectionLabel>The Problem</SectionLabel>
             <h2
               className="font-syne font-bold text-3xl md:text-4xl text-uf-navy mt-5 mb-4"
-              style={{ lineHeight: 1.3, overflow: 'visible' }}
+              style={{ lineHeight: 1.4, paddingBottom: '0.1em', overflow: 'visible' }}
             >
               Traditional auth was not built for agents
             </h2>
@@ -232,13 +227,13 @@ export default function Home() {
               >
                 <div
                   className="font-syne font-bold text-4xl text-uf-teal mb-5 select-none"
-                  style={{ lineHeight: 1 }}
+                  style={{ lineHeight: 1, paddingBottom: '0.2em' }}
                 >
                   {card.num}
                 </div>
                 <h3
                   className="font-syne font-semibold text-lg text-uf-navy mb-3"
-                  style={{ lineHeight: 1.3 }}
+                  style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
                 >
                   {card.title}
                 </h3>
@@ -267,7 +262,7 @@ export default function Home() {
               >
                 <div
                   className="font-syne font-bold text-5xl md:text-6xl text-white mb-2"
-                  style={{ lineHeight: 1.2 }}
+                  style={{ lineHeight: 1.4, paddingBottom: '0.2em' }}
                 >
                   {item.stat}
                 </div>
@@ -279,11 +274,11 @@ export default function Home() {
           </div>
           <motion.div {...fadeUp(0.3)} className="text-center">
             <p className="font-sans text-sm text-white/80 mb-6">
-              Validated in peer-reviewed research submitted to IEEE Access.
+              Validated in research submitted to arXiv (arXiv:2509.13597).
             </p>
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Link
-                to="/research"
+                to="/docs"
                 className="inline-flex items-center justify-center gap-2 border border-white text-white font-sans font-medium px-6 py-3 rounded-lg hover:bg-white/10 transition-colors"
               >
                 Read the research
@@ -300,13 +295,13 @@ export default function Home() {
             <SectionLabel>Our Products</SectionLabel>
             <h2
               className="font-syne font-bold text-3xl md:text-4xl text-uf-navy mt-5"
-              style={{ lineHeight: 1.3 }}
+              style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
             >
               Security infrastructure for the agentic era
             </h2>
           </motion.div>
 
-          {/* NovaAuth */}
+          {/* Auth51 */}
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
             <motion.div {...fadeUp(0.1)}>
               <div className="font-sans text-xs font-semibold text-uf-teal uppercase tracking-widest mb-3">
@@ -314,9 +309,9 @@ export default function Home() {
               </div>
               <h2
                 className="font-syne font-bold text-4xl md:text-5xl text-uf-navy mb-4"
-                style={{ lineHeight: 1.2 }}
+                style={{ lineHeight: 1.4, paddingBottom: '0.2em' }}
               >
-                NovaAuth
+                Auth51
               </h2>
               <p className="font-sans text-uf-body text-lg leading-relaxed mb-6">
                 Implements the Agentic JWT protocol commercially. Gives every AI agent a cryptographic
@@ -346,8 +341,8 @@ export default function Home() {
             {/* Code block */}
             <motion.div {...fadeUp(0.2)}>
               <div
-                className="rounded-xl overflow-hidden"
-                style={{ background: '#0A0F1E', border: '1px solid #1a2540' }}
+                className="rounded-xl"
+                style={{ background: '#0A0F1E', border: '1px solid #1a2540', overflow: 'visible' }}
               >
                 {/* Window chrome */}
                 <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/10">
@@ -395,7 +390,7 @@ export default function Home() {
                     <div key={s.step} className="flex gap-4 items-start">
                       <span
                         className="font-syne font-bold text-2xl text-uf-teal shrink-0 select-none"
-                        style={{ lineHeight: 1 }}
+                        style={{ lineHeight: 1, paddingBottom: '0.2em' }}
                       >
                         {s.step}
                       </span>
@@ -416,7 +411,7 @@ export default function Home() {
               </div>
               <h2
                 className="font-syne font-bold text-4xl md:text-5xl text-uf-navy mb-4"
-                style={{ lineHeight: 1.2 }}
+                style={{ lineHeight: 1.4, paddingBottom: '0.2em' }}
               >
                 Patchet
               </h2>
@@ -455,9 +450,9 @@ export default function Home() {
             <SectionLabel>Who It's For</SectionLabel>
             <h2
               className="font-syne font-bold text-3xl md:text-4xl text-uf-navy mt-5"
-              style={{ lineHeight: 1.3 }}
+              style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
             >
-              Built for teams shipping agentic systems
+              Built for both teams developing agentic systems and building APIs
             </h2>
           </motion.div>
 
@@ -465,11 +460,11 @@ export default function Home() {
             {[
               {
                 role: 'Security Engineers',
-                body: 'You need cryptographic proof of which agent accessed what — not log guesswork. NovaAuth gives you a complete, unforgeable audit trail for every agentic API call.',
+                body: 'You need cryptographic proof of which agent accessed what — not log guesswork. Auth51 gives you a complete, unforgeable audit trail for every agentic API call.',
               },
               {
                 role: 'Platform Teams',
-                body: 'You need identity isolation between agents running in the same process space. NovaAuth\'s agent_checksum ensures no two agents share an identity, even within a single orchestrator.',
+                body: 'You need identity isolation between agents running in the same process space. Auth51\'s agent_checksum ensures no two agents share an identity, even within a single orchestrator.',
               },
               {
                 role: 'AI Product Teams',
@@ -484,7 +479,7 @@ export default function Home() {
               >
                 <h3
                   className="font-syne font-semibold text-lg text-uf-navy mb-3"
-                  style={{ lineHeight: 1.3 }}
+                  style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
                 >
                   {item.role}
                 </h3>
@@ -504,12 +499,12 @@ export default function Home() {
             <SectionLabel>Private Beta</SectionLabel>
             <h2
               className="font-syne font-bold text-3xl md:text-4xl text-uf-navy mt-5 mb-4"
-              style={{ lineHeight: 1.3 }}
+              style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
             >
               Join the waitlist.
             </h2>
             <p className="font-sans text-uf-body text-lg mb-10">
-              NovaAuth and Patchet are in private beta. Request early access for your team.
+              Auth51 and Patchet are in private beta. Request early access for your team.
             </p>
           </motion.div>
 

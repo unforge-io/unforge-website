@@ -15,9 +15,10 @@ export default {
         'uf-muted':  '#9CA3AF',
       },
       fontFamily: {
-        syne: ['Syne', 'sans-serif'],
-        sans: ['"DM Sans"', 'sans-serif'],
-        mono: ['"IBM Plex Mono"', 'monospace'],
+        syne:  ['Inter', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        sans:  ['"DM Sans"', 'sans-serif'],
+        mono:  ['"IBM Plex Mono"', 'monospace'],
       },
       keyframes: {
         'pulse-dot': {
