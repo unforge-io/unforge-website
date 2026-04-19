@@ -22,7 +22,7 @@ function SectionLabel({ children }) {
 function AnimatedHeadline() {
   const line1 = ['Identity', 'for', 'AI', 'agents']
   const line2 = ['that', 'actually']
-  const tealWord = 'act.'
+  const tealWord = 'acts.'
 
   return (
     <h1
@@ -243,48 +243,6 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── RESEARCH HIGHLIGHT (teal bg) ──────────────────────────────── */}
-      <section className="bg-uf-teal py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-10 mb-12">
-            {[
-              { stat: '12 / 12', label: 'STRIDE Threats Blocked' },
-              { stat: '18.15ms', label: 'Total Security Overhead' },
-              { stat: '100%',    label: 'OAuth 2.0 Compatible' },
-            ].map((item, i) => (
-              <motion.div
-                key={item.label}
-                {...fadeUp(i * 0.1)}
-                className="text-center"
-              >
-                <div
-                  className="font-syne font-bold text-5xl md:text-6xl text-white mb-2"
-                  style={{ lineHeight: 1.4, paddingBottom: '0.2em' }}
-                >
-                  {item.stat}
-                </div>
-                <div className="font-sans text-sm text-white/75 uppercase tracking-widest">
-                  {item.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          <motion.div {...fadeUp(0.3)} className="text-center">
-            <p className="font-sans text-sm text-white/80 mb-6">
-              Validated in research submitted to arXiv (arXiv:2509.13597).
-            </p>
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <Link
-                to="/docs"
-                className="inline-flex items-center justify-center gap-2 border border-white text-white font-sans font-medium px-6 py-3 rounded-lg hover:bg-white/10 transition-colors"
-              >
-                Read the research
-              </Link>
-            </motion.div>
-          </motion.div>
         </div>
       </section>
 
