@@ -36,6 +36,7 @@ const FOUNDING_MEMBERS = [
   { name: 'Rahul K',    role: 'Founding Member' },
   { name: 'Neil Das',   role: 'Founding Member' },
   { name: 'Jason Liao', role: 'Founding Member' },
+  { name: 'Addison Thurston', role: 'Founding Member' },
 ]
 
 const ADVISORS = [
@@ -155,7 +156,7 @@ export default function Company() {
                 { year: '2024', event: 'Validated experimentally — 18.15ms overhead, 12/12 STRIDE threats blocked' },
                 { year: '2025', event: 'Submitted to arXiv (arXiv:2509.13597)' },
                 { year: '2025', event: 'Filed two U.S. Patents (Application Nos. 19/204,492 and 19/315,486)' },
-                { year: '2026', event: 'Founded Unforge and began building Auth51 and Patchet' },
+                { year: '2026', event: 'Founded Unforge and began building Auth51' },
               ].map((item, i) => (
                 <div key={i} className="flex gap-6 items-start">
                   <span className="font-mono text-sm text-uf-teal font-semibold shrink-0 w-12">{item.year}</span>

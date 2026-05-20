@@ -13,26 +13,58 @@ export default function Products() {
     <div>
 
       {/* ── HERO ──────────────────────────────────────────────────────── */}
-      <section className="bg-white py-24 px-6 border-b border-uf-border text-center">
+      <section className="bg-uf-alt py-28 px-6 border-b border-uf-border text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+          className="max-w-3xl mx-auto"
         >
-          <span className="section-label">Our Products</span>
+          <span className="section-label">Our Product: Auth51</span>
           <h1
             className="font-syne font-bold text-4xl md:text-5xl text-uf-navy mt-5 mb-5"
             style={{ lineHeight: 1.4, paddingBottom: '0.1em', overflow: 'visible' }}
           >
             Security infrastructure<br className="hidden sm:block" /> for the agentic era
           </h1>
-          <p className="font-sans text-uf-body text-lg max-w-xl mx-auto mb-10">
-            Two products. One mission: make agentic AI systems identifiable, accountable, and auditable.
+          <p className="font-sans text-uf-body text-lg max-w-xl mx-auto mb-12">
+            Our mission: Make agentic AI systems identifiable, accountable, and auditable.
           </p>
-          <div className="flex justify-center gap-4">
-            <a href="#auth51" className="btn-primary">Auth51</a>
-            <a href="#patchet" className="btn-outline">Patchet</a>
-          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.45 }}
+            className="flex flex-col items-center gap-4"
+          >
+            <motion.div
+              className="inline-flex flex-col sm:flex-row items-stretch sm:items-center gap-3 p-2 rounded-2xl bg-white border border-uf-border shadow-sm"
+            >
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="sm:flex-1">
+                <a
+                  href="https://auth51.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary w-full sm:min-w-[11rem] justify-center"
+                >
+                  About Auth51
+                </a>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="sm:flex-1">
+                <a
+                  href="https://auth51-console.vercel.app/console"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-outline w-full sm:min-w-[11rem] justify-center"
+                >
+                  Auth51 Console
+                </a>
+              </motion.div>
+            </motion.div>
+            <p className="font-sans text-sm text-uf-muted max-w-sm">
+              Learn about the product or open the developer console.
+            </p>
+          </motion.div>
         </motion.div>
       </section>
 
@@ -40,7 +72,6 @@ export default function Products() {
       <section id="auth51" className="bg-white py-28 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeUp()}>
-            <span className="section-label">Product 01</span>
             <h2
               className="font-syne font-bold text-4xl md:text-5xl text-uf-navy mt-4 mb-5"
               style={{ lineHeight: 1.4, paddingBottom: '0.2em' }}
@@ -135,133 +166,6 @@ export default function Products() {
               ))}
             </div>
           </motion.div>
-
-          {/* Compatibility */}
-          <motion.div {...fadeUp(0.25)}>
-            <h3
-              className="font-syne font-semibold text-xl text-uf-navy mb-6"
-              style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
-            >
-              Compatible with
-            </h3>
-            <div className="flex flex-wrap gap-3">
-              {['Okta', 'Auth0', 'Azure AD', 'AWS IAM', 'Google IAM', 'Ping Identity', 'Any OAuth 2.0 IDP'].map(p => (
-                <span
-                  key={p}
-                  className="font-sans text-sm font-medium text-uf-teal bg-white border border-uf-teal px-4 py-2 rounded-lg"
-                >
-                  {p}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── PATCHET ───────────────────────────────────────────────────── */}
-      <section id="patchet" className="bg-uf-alt py-28 px-6 border-t border-uf-border">
-        <div className="max-w-7xl mx-auto">
-          <motion.div {...fadeUp()}>
-            <span className="section-label">Product 02</span>
-            <h2
-              className="font-syne font-bold text-4xl md:text-5xl text-uf-navy mt-4 mb-5"
-              style={{ lineHeight: 1.4, paddingBottom: '0.2em' }}
-            >
-              Patchet
-            </h2>
-            <p className="font-sans text-uf-body text-lg leading-relaxed max-w-3xl mb-14">
-              SBOM vulnerability detection and automated patching. Continuously scans your repositories,
-              generates accurate software bills of materials, fetches CVE data from osv.dev, triages
-              vulnerabilities by severity, and creates automated pull requests with ready-to-merge patches.
-            </p>
-          </motion.div>
-
-          {/* How it works — 4 steps */}
-          <motion.div {...fadeUp(0.1)} className="mb-16">
-            <h3
-              className="font-syne font-semibold text-xl text-uf-navy mb-8"
-              style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
-            >
-              How it works
-            </h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  step: '01',
-                  title: 'Scan Manifests',
-                  body: 'Patchet scans your repository for all dependency manifest files: package.json, pom.xml, requirements.txt, go.mod, Cargo.toml, and more.',
-                },
-                {
-                  step: '02',
-                  title: 'Generate SBOM',
-                  body: 'A complete, accurate software bill of materials is generated across all detected ecosystems — giving you a full inventory of every dependency.',
-                },
-                {
-                  step: '03',
-                  title: 'Fetch CVEs',
-                  body: 'Real-time CVE data is fetched from osv.dev. Each vulnerability is scored by CVSS severity and grouped into optimal patch batches.',
-                },
-                {
-                  step: '04',
-                  title: 'Automated PRs',
-                  body: 'Patchet creates pull requests with patches ready to review and merge. No manual effort required — just review and ship.',
-                },
-              ].map((item, i) => (
-                <motion.div
-                  key={item.step}
-                  {...fadeUp(i * 0.08)}
-                  whileHover={{ y: -4, boxShadow: '0 12px 32px rgba(0,0,0,0.09)' }}
-                  className="card-white rounded-xl p-6 transition-all duration-300"
-                >
-                  <div
-                    className="font-syne font-bold text-3xl text-uf-teal mb-4 select-none"
-                    style={{ lineHeight: 1, paddingBottom: '0.2em' }}
-                  >
-                    {item.step}
-                  </div>
-                  <h4
-                    className="font-syne font-semibold text-base text-uf-navy mb-2"
-                    style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
-                  >
-                    {item.title}
-                  </h4>
-                  <p className="font-sans text-xs text-uf-body leading-relaxed">{item.body}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Ecosystems */}
-          <motion.div {...fadeUp(0.2)} className="mb-14">
-            <h3
-              className="font-syne font-semibold text-xl text-uf-navy mb-6"
-              style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
-            >
-              Supported ecosystems
-            </h3>
-            <div className="flex flex-wrap gap-3">
-              {['npm / Node.js', 'PyPI / Python', 'Maven / Java', 'Go modules', 'Cargo / Rust', 'RubyGems', 'NuGet / .NET', 'Composer / PHP'].map(e => (
-                <span
-                  key={e}
-                  className="font-mono text-xs text-uf-teal bg-white border border-uf-border px-3.5 py-1.5 rounded-lg"
-                >
-                  {e}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* GitHub link */}
-          <motion.div {...fadeUp(0.25)}>
-            <a
-              href="https://github.com/hypernome/patchet"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline inline-flex"
-            >
-              View on GitHub ↗
-            </a>
-          </motion.div>
         </div>
       </section>
 
@@ -275,12 +179,20 @@ export default function Products() {
             Ready to secure your agents?
           </h2>
           <p className="font-sans text-uf-body text-lg mb-8">
-            Both products are in private beta. Request early access for your team.
+            Auth51 is in private beta. Request early access for your team.
           </p>
-          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
-            <Link to="/signup" className="btn-primary">
-              Request Access
-            </Link>
+          <motion.div
+            {...fadeUp(0.15)}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-block"
+          >
+            <a
+              href="mailto:info@unforge.io?subject=Early%20access%20request"
+              className="btn-primary"
+            >
+              Request early access
+            </a>
           </motion.div>
         </motion.div>
       </section>

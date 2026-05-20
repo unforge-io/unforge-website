@@ -27,7 +27,6 @@ export default function Footer() {
               </h4>
               <ul className="flex flex-col gap-2.5">
                 <li><Link to="/products" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">Auth51</Link></li>
-                <li><Link to="/products" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">Patchet</Link></li>
               </ul>
             </div>
             <div>
@@ -58,9 +57,17 @@ export default function Footer() {
                   GitHub
                 </a>
               </li>
-              <li><Link to="/dashboard" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">API Keys</Link></li>
-              <li><Link to="/dashboard" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">Auth51 Console</Link></li>
-              <li><Link to="/dashboard" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">Patchet Dashboard</Link></li>
+              {/* <li><Link to="/dashboard" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">API Keys</Link></li> */}
+              <li>
+                <a
+                  href="https://auth51-console.vercel.app/console"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-sans text-sm text-uf-muted hover:text-white transition-colors"
+                >
+                  Auth51 Console
+                </a>
+              </li>
             </ul>
           </div>
         </div>

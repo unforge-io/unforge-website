@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
@@ -20,9 +19,9 @@ function SectionLabel({ children }) {
 
 /* ─── Word-by-word animated headline ─────────────────────────────────── */
 function AnimatedHeadline() {
-  const line1 = ['Identity', 'for', 'AI', 'agents']
+  const line1 = ['Auth', 'built', 'for', 'agents']
   const line2 = ['that', 'actually']
-  const tealWord = 'acts.'
+  const tealWord = 'scales.'
 
   return (
     <h1
@@ -71,8 +70,6 @@ function AnimatedHeadline() {
 
 /* ─── Page ────────────────────────────────────────────────────────────── */
 export default function Home() {
-  const [email, setEmail] = useState('')
-
   return (
     <div className="flex flex-col">
 
@@ -120,14 +117,12 @@ export default function Home() {
               className="flex flex-wrap gap-3 mb-7"
             >
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <Link to="/docs" className="btn-outline">
-                  Read the research
-                </Link>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <Link to="/signup" className="btn-primary">
-                  Request early access
-                </Link>
+                <a
+                  href="mailto:info@unforge.io?subject=Early%20access%20request"
+                  className="btn-primary"
+                >
+                  Contact us
+                </a>
               </motion.div>
             </motion.div>
 
@@ -246,11 +241,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── PRODUCTS ──────────────────────────────────────────────────── */}
+      {/* ── PRODUCT ──────────────────────────────────────────────────── */}
       <section className="bg-white py-28 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeUp()} className="text-center mb-20">
-            <SectionLabel>Our Products</SectionLabel>
+            <SectionLabel>Our Product</SectionLabel>
             <h2
               className="font-syne font-bold text-3xl md:text-4xl text-uf-navy mt-5"
               style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
@@ -262,9 +257,6 @@ export default function Home() {
           {/* Auth51 */}
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
             <motion.div {...fadeUp(0.1)}>
-              <div className="font-sans text-xs font-semibold text-uf-teal uppercase tracking-widest mb-3">
-                Product 01
-              </div>
               <h2
                 className="font-syne font-bold text-4xl md:text-5xl text-uf-navy mb-4"
                 style={{ lineHeight: 1.4, paddingBottom: '0.2em' }}
@@ -310,92 +302,25 @@ export default function Home() {
                   <span className="ml-3 font-mono text-xs text-white/40">intent-token.json</span>
                 </div>
                 <pre className="font-mono text-xs leading-6 p-6 overflow-x-auto text-white/80">
-<span className="text-white/40">{'{'}</span>{'\n'}
-{'  '}<span className="text-uf-teal">"intent"</span><span className="text-white/40">: {'{'}</span>{'\n'}
-{'    '}<span className="text-uf-teal">"workflow_id"</span><span className="text-white/40">:        </span><span className="text-yellow-300">"wf_deploy_0xf4a2"</span><span className="text-white/40">,</span>{'\n'}
-{'    '}<span className="text-uf-teal">"workflow_step"</span><span className="text-white/40">:      </span><span className="text-yellow-300">"validate_build"</span><span className="text-white/40">,</span>{'\n'}
-{'    '}<span className="text-uf-teal">"executed_by"</span><span className="text-white/40">:        </span><span className="text-yellow-300">"agent:code-reviewer-v2"</span><span className="text-white/40">,</span>{'\n'}
-{'    '}<span className="text-uf-teal">"delegation_chain"</span><span className="text-white/40">:   [</span>{'\n'}
-{'      '}<span className="text-yellow-300">"user:alice"</span><span className="text-white/40">,</span>{'\n'}
-{'      '}<span className="text-yellow-300">"agent:orchestrator-v1"</span><span className="text-white/40">,</span>{'\n'}
-{'      '}<span className="text-yellow-300">"agent:code-reviewer-v2"</span>{'\n'}
-{'    '}<span className="text-white/40">],</span>{'\n'}
-{'    '}<span className="text-uf-teal">"step_sequence_hash"</span><span className="text-white/40">: </span><span className="text-yellow-300">"sha256:9f8e7d6c..."</span>{'\n'}
-{'  '}<span className="text-white/40">'{'}'},</span>{'\n'}
-{'  '}<span className="text-uf-teal">"agent_proof"</span><span className="text-white/40">: {'{'}</span>{'\n'}
-{'    '}<span className="text-uf-teal">"agent_checksum"</span><span className="text-white/40">:   </span><span className="text-yellow-300">"sha256:3a2b1c0d..."</span><span className="text-white/40">,</span>{'\n'}
-{'    '}<span className="text-uf-teal">"registration_id"</span><span className="text-white/40">:  </span><span className="text-yellow-300">"reg_7x9y2z"</span>{'\n'}
-{'  '}<span className="text-white/40">{'}'}</span>{'\n'}
-<span className="text-white/40">{'}'}</span>
+                  <span className="text-white/40">{'{'}</span>{'\n'}
+                  {'  '}<span className="text-uf-teal">"intent"</span><span className="text-white/40">: {'{'}</span>{'\n'}
+                  {'    '}<span className="text-uf-teal">"workflow_id"</span><span className="text-white/40">:        </span><span className="text-yellow-300">"wf_deploy_0xf4a2"</span><span className="text-white/40">,</span>{'\n'}
+                  {'    '}<span className="text-uf-teal">"workflow_step"</span><span className="text-white/40">:      </span><span className="text-yellow-300">"validate_build"</span><span className="text-white/40">,</span>{'\n'}
+                  {'    '}<span className="text-uf-teal">"executed_by"</span><span className="text-white/40">:        </span><span className="text-yellow-300">"agent:code-reviewer-v2"</span><span className="text-white/40">,</span>{'\n'}
+                  {'    '}<span className="text-uf-teal">"delegation_chain"</span><span className="text-white/40">:   [</span>{'\n'}
+                  {'      '}<span className="text-yellow-300">"user:alice"</span><span className="text-white/40">,</span>{'\n'}
+                  {'      '}<span className="text-yellow-300">"agent:orchestrator-v1"</span><span className="text-white/40">,</span>{'\n'}
+                  {'      '}<span className="text-yellow-300">"agent:code-reviewer-v2"</span>{'\n'}
+                  {'    '}<span className="text-white/40">],</span>{'\n'}
+                  {'    '}<span className="text-uf-teal">"step_sequence_hash"</span><span className="text-white/40">: </span><span className="text-yellow-300">"sha256:9f8e7d6c..."</span>{'\n'}
+                  {'  '}<span className="text-white/40">'{'}'},</span>{'\n'}
+                  {'  '}<span className="text-uf-teal">"agent_proof"</span><span className="text-white/40">: {'{'}</span>{'\n'}
+                  {'    '}<span className="text-uf-teal">"agent_checksum"</span><span className="text-white/40">:   </span><span className="text-yellow-300">"sha256:3a2b1c0d..."</span><span className="text-white/40">,</span>{'\n'}
+                  {'    '}<span className="text-uf-teal">"registration_id"</span><span className="text-white/40">:  </span><span className="text-yellow-300">"reg_7x9y2z"</span>{'\n'}
+                  {'  '}<span className="text-white/40">{'}'}</span>{'\n'}
+                  <span className="text-white/40">{'}'}</span>
                 </pre>
               </div>
-            </motion.div>
-          </div>
-
-          {/* Patchet — reversed */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Graphic left */}
-            <motion.div {...fadeUp(0.1)} className="order-2 lg:order-1">
-              <div className="card-white rounded-xl p-8">
-                <div className="font-mono text-xs text-uf-muted mb-6">Patchet — SBOM + CVE pipeline</div>
-                <div className="space-y-5">
-                  {[
-                    { step: '01', label: 'Scan manifests',           detail: 'package.json · pom.xml · requirements.txt · go.mod · Cargo.toml' },
-                    { step: '02', label: 'Generate SBOM',            detail: 'Complete software bill of materials across all ecosystems' },
-                    { step: '03', label: 'Fetch CVEs from osv.dev',  detail: 'Score by CVSS severity · group by optimal patch batch' },
-                    { step: '04', label: 'Create automated PRs',     detail: 'Patches ready to review and merge — zero manual effort' },
-                  ].map(s => (
-                    <div key={s.step} className="flex gap-4 items-start">
-                      <span
-                        className="font-syne font-bold text-2xl text-uf-teal shrink-0 select-none"
-                        style={{ lineHeight: 1, paddingBottom: '0.2em' }}
-                      >
-                        {s.step}
-                      </span>
-                      <div>
-                        <div className="font-sans text-sm font-semibold text-uf-navy">{s.label}</div>
-                        <div className="font-mono text-xs text-uf-muted mt-1">{s.detail}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Text right */}
-            <motion.div {...fadeUp(0.2)} className="order-1 lg:order-2">
-              <div className="font-sans text-xs font-semibold text-uf-teal uppercase tracking-widest mb-3">
-                Product 02
-              </div>
-              <h2
-                className="font-syne font-bold text-4xl md:text-5xl text-uf-navy mb-4"
-                style={{ lineHeight: 1.4, paddingBottom: '0.2em' }}
-              >
-                Patchet
-              </h2>
-              <p className="font-sans text-uf-body text-lg leading-relaxed mb-6">
-                SBOM vulnerability detection and automated patching. Scans repositories for manifest
-                files, generates accurate SBOMs, fetches CVEs from osv.dev, triages vulnerabilities
-                by severity, and creates automated pull requests with patches.
-              </p>
-              <ul className="space-y-3 mb-8">
-                {[
-                  'Multi-ecosystem SBOM generation',
-                  'Real-time CVE triage from osv.dev',
-                  'Automated pull requests — zero manual effort',
-                  'Used as validation system in the Agentic JWT research paper',
-                ].map(f => (
-                  <li key={f} className="flex items-start gap-3 font-sans text-sm text-uf-body">
-                    <span className="text-uf-teal mt-0.5 shrink-0 font-bold">✓</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
-                <Link to="/products" className="btn-primary">
-                  Learn more →
-                </Link>
-              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -462,32 +387,23 @@ export default function Home() {
               Join the waitlist.
             </h2>
             <p className="font-sans text-uf-body text-lg mb-10">
-              Auth51 and Patchet are in private beta. Request early access for your team.
+              Auth51 is in private beta. Request early access for your team.
             </p>
           </motion.div>
 
-          <motion.form
+          <motion.div
             {...fadeUp(0.15)}
-            onSubmit={e => e.preventDefault()}
-            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-block"
           >
-            <input
-              type="email"
-              placeholder="you@company.com"
-              required
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              className="flex-1 bg-white border border-uf-border text-uf-navy placeholder-uf-muted font-sans text-sm px-4 py-3 rounded-lg focus:outline-none focus:border-uf-teal transition-colors"
-            />
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              type="submit"
-              className="btn-primary whitespace-nowrap"
+            <a
+              href="mailto:info@unforge.io?subject=Early%20access%20request"
+              className="btn-primary"
             >
-              Submit
-            </motion.button>
-          </motion.form>
+              Request early access
+            </a>
+          </motion.div>
 
           <motion.p {...fadeUp(0.25)} className="font-sans text-xs text-uf-muted mt-5">
             No spam. We'll reach out when your spot is ready.
