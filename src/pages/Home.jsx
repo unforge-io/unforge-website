@@ -21,7 +21,7 @@ function SectionLabel({ children }) {
 function AnimatedHeadline() {
   const line1 = ['Auth', 'built', 'for', 'agents']
   const line2 = ['that', 'actually']
-  const tealWord = 'scales.'
+  const tealWord = 'works.'
 
   return (
     <h1
