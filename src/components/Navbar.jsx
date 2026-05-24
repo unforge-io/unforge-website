@@ -3,10 +3,10 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const NAV_LINKS = [
-  { to: '/',        label: 'Home'           },
-  { to: '/products', label: 'Products'       },
-  { to: '/company',  label: 'Company'        },
-  { to: '/docs',     label: 'Technical Docs' },
+  { to: '/',         label: 'Home'          },
+  { to: '/products', label: 'Products'      },
+  { to: '/company',  label: 'Company'       },
+  { to: '/docs',     label: 'Technical Docs'},
 ]
 
 export default function Navbar() {
@@ -15,118 +15,145 @@ export default function Navbar() {
   const location = useLocation()
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10)
+    const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  useEffect(() => {
-    setMenuOpen(false)
-  }, [location.pathname])
+  useEffect(() => { setMenuOpen(false) }, [location.pathname])
+
+  const shadowClass = scrolled
+    ? 'shadow-[0_8px_32px_rgba(0,0,0,0.35)]'
+    : 'shadow-[0_4px_20px_rgba(0,0,0,0.22)]'
 
   return (
     <>
-      {/* 3px teal top accent line */}
-      <div className="fixed top-0 left-0 right-0 h-[3px] bg-uf-teal z-50" />
+      {/* Fixed outer wrapper */}
+      <div className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center px-4 pt-4">
 
-      <motion.header
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45, ease: 'easeOut' }}
-        className={`fixed top-[3px] left-0 right-0 z-40 bg-white border-b border-uf-border transition-shadow duration-200 ${
-          scrolled ? 'shadow-sm' : ''
-        }`}
-      >
-        <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex-shrink-0">
-            <span
-              className="font-syne font-bold text-xl tracking-tight"
-              style={{ paddingBottom: '0.15em', lineHeight: '1.5', overflow: 'visible', display: 'inline-block' }}
-            >
-              <span className="text-uf-navy">un</span>
-              <span className="text-uf-teal">forge</span>
-            </span>
-          </Link>
-
-          {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-8">
-            {NAV_LINKS.map(({ to, label }) => (
-              <NavLink
-                key={to}
-                to={to}
-                end={to === '/'}
-                className={({ isActive }) =>
-                  `font-sans text-sm font-medium transition-colors duration-150 ${
-                    isActive ? 'text-uf-teal' : 'text-uf-body hover:text-uf-teal'
-                  }`
-                }
+        {/* Two-pill row */}
+        <motion.div
+          initial={{ opacity: 0, y: -16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, ease: 'easeOut' }}
+          className="w-full max-w-7xl flex items-center justify-between gap-4"
+        >
+          {/* ── Left pill: logo + nav links ── */}
+          <nav className={`flex items-center gap-6 px-4 py-2.5 rounded-2xl bg-uf-navy/80 backdrop-blur-md ${shadowClass} transition-shadow duration-300`}>
+            <Link to="/" className="flex-shrink-0 pl-1">
+              <span
+                className="font-syne font-bold text-lg tracking-tight"
+                style={{ lineHeight: 1.5, overflow: 'visible', display: 'inline-block', paddingBottom: '0.1em' }}
               >
-                {label}
-              </NavLink>
-            ))}
-          </div>
+                <span className="text-white">un</span>
+                <span className="text-uf-teal">forge</span>
+              </span>
+            </Link>
 
-          {/* Mobile hamburger */}
-          <button
-            onClick={() => setMenuOpen(v => !v)}
-            aria-label="Toggle menu"
-            className="md:hidden p-2"
-          >
-            <motion.div className="flex flex-col gap-1.5 w-5">
+            <div className="hidden md:flex items-center gap-6">
+              {NAV_LINKS.map(({ to, label }) => (
+                <NavLink
+                  key={to}
+                  to={to}
+                  end={to === '/'}
+                  className={({ isActive }) =>
+                    `font-sans text-sm font-medium transition-colors duration-150 ${
+                      isActive ? 'text-uf-teal' : 'text-white/70 hover:text-white'
+                    }`
+                  }
+                >
+                  {label}
+                </NavLink>
+              ))}
+            </div>
+          </nav>
+
+          {/* ── Right pill: CTA + hamburger ── */}
+          <div className={`flex items-center gap-2 px-3 py-2 rounded-2xl bg-uf-navy/80 backdrop-blur-md ${shadowClass} transition-shadow duration-300`}>
+            <motion.a href="https://auth51.com/console" target="_blank" rel="noopener noreferrer" className="hidden md:inline-flex items-center justify-center font-sans text-sm font-semibold px-4 py-2 rounded-xl text-white transition-colors duration-150 hover:bg-[#6366f1]">
+              <span className="hidden md:inline">Try Auth51</span>
+            </motion.a>
+            {/* Contact us — desktop */}
+            <motion.a
+              href="mailto:info@unforge.io?subject=Early%20access%20request"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="hidden md:inline-flex items-center justify-center font-sans text-sm font-semibold px-4 py-2 rounded-xl bg-uf-teal text-white transition-colors duration-150 hover:bg-[#178a64]"
+            >
+              Contact us
+            </motion.a>
+
+            {/* Hamburger — mobile */}
+            <button
+              onClick={() => setMenuOpen(v => !v)}
+              aria-label="Toggle menu"
+              className="md:hidden flex flex-col gap-[5px] w-8 h-8 items-center justify-center rounded-lg hover:bg-white/10 transition-colors"
+            >
               <motion.span
                 animate={menuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
                 transition={{ duration: 0.2 }}
-                className="block h-0.5 w-5 bg-uf-navy rounded-full"
+                className="block h-0.5 w-5 bg-white rounded-full"
               />
               <motion.span
                 animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
-                transition={{ duration: 0.2 }}
-                className="block h-0.5 w-5 bg-uf-navy rounded-full"
+                transition={{ duration: 0.15 }}
+                className="block h-0.5 w-5 bg-white rounded-full"
               />
               <motion.span
                 animate={menuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
                 transition={{ duration: 0.2 }}
-                className="block h-0.5 w-5 bg-uf-navy rounded-full"
+                className="block h-0.5 w-5 bg-white rounded-full"
               />
-            </motion.div>
-          </button>
-        </nav>
+            </button>
+          </div>
+        </motion.div>
 
-        {/* Mobile dropdown menu */}
+        {/* Mobile dropdown — second row, full width below both pills */}
         <AnimatePresence>
           {menuOpen && (
             <motion.div
               key="mobile-menu"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.22, ease: 'easeInOut' }}
-              className="md:hidden overflow-hidden border-t border-uf-border bg-white"
+              initial={{ opacity: 0, y: -8, scaleY: 0.95 }}
+              animate={{ opacity: 1, y: 0, scaleY: 1 }}
+              exit={{ opacity: 0, y: -8, scaleY: 0.95 }}
+              transition={{ duration: 0.2, ease: 'easeInOut' }}
+              style={{ originY: 0 }}
+              className="w-full max-w-7xl mt-2 rounded-2xl bg-uf-navy shadow-[0_8px_32px_rgba(0,0,0,0.35)] overflow-hidden"
             >
-              <div className="px-6 py-5 flex flex-col gap-1">
+              <div className="flex flex-col px-4 py-4 gap-1">
                 {NAV_LINKS.map(({ to, label }) => (
                   <NavLink
                     key={to}
                     to={to}
                     end={to === '/'}
                     className={({ isActive }) =>
-                      `block py-2.5 font-sans text-sm font-medium transition-colors ${
-                        isActive ? 'text-uf-teal' : 'text-uf-body hover:text-uf-teal'
+                      `block px-3 py-2.5 rounded-lg font-sans text-sm font-medium transition-colors ${
+                        isActive
+                          ? 'text-uf-teal bg-white/5'
+                          : 'text-white/70 hover:text-white hover:bg-white/5'
                       }`
                     }
                   >
                     {label}
                   </NavLink>
                 ))}
+                <div className="mt-3 pt-3 border-t border-white/10">
+                  <a
+                    href="mailto:info@unforge.io?subject=Early%20access%20request"
+                    className="block w-full text-center font-sans text-sm font-semibold px-4 py-2.5 rounded-xl bg-uf-teal text-white hover:bg-[#178a64] transition-colors"
+                  >
+                    Contact us
+                  </a>
+                </div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.header>
 
-      {/* Spacer for fixed header (3px line + 64px header) */}
-      <div className="h-[67px]" />
+      </div>
+
+      {/* Spacer so content isn't hidden under fixed navbar */}
+      <div className="h-[88px]" />
     </>
   )
 }
