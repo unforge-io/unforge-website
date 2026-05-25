@@ -25,8 +25,14 @@ function AnimatedHeadline() {
 
   return (
     <h1
-      className="font-syne font-bold text-5xl md:text-6xl text-uf-navy mb-6"
-      style={{ lineHeight: 1.4, paddingTop: '0.1em', paddingBottom: '0.2em', overflow: 'visible' }}
+      className="font-syne font-bold text-5xl md:text-6xl text-[#FFFFFF] mb-6"
+      style={{
+        lineHeight: 1.4,
+        paddingTop: '0.1em',
+        paddingBottom: '0.2em',
+        overflow: 'visible',
+        textShadow: '0 3px 14px rgba(0, 0, 0, 0.5)',
+      }}
     >
       {/* Line 1 */}
       <span className="block" style={{ overflow: 'visible' }}>
@@ -59,7 +65,7 @@ function AnimatedHeadline() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.45, ease: 'easeOut' }}
-          style={{ display: 'inline-block', overflow: 'visible', padding: '0.1em 0', color: '#2DB485' }}
+          style={{ display: 'inline-block', overflow: 'visible', padding: '0.1em 0', color: '#5EEAD4' }}
         >
           {tealWord}
         </motion.span>
@@ -74,9 +80,9 @@ export default function Home() {
     <div className="flex flex-col">
 
       {/* ── HERO ──────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden py-24 px-6 bg-[url('/unforge_shield.png')] bg-cover bg-center min-h-screen">
-        <div className="absolute inset-0 bg-white/40" />
-        <div className="absolute inset-x-0 bottom-0 h-[70%] bg-gradient-to-t from-[#d8f4ec]/95 via-[#d8f4ec]/55 to-transparent" />
+      <section className="relative overflow-hidden py-24 px-6 bg-[url('/hero.png')] bg-cover bg-center min-h-screen">
+        <div className="absolute inset-0 bg-white/10" />
+        <div className="absolute inset-x-0 bottom-0 h-[70%] bg-gradient-to-t from-[#d8f4ec]/75 via-[#d8f4ec]/35 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[55%_45%] gap-14 items-start">
 
           {/* Left column */}
@@ -105,7 +111,8 @@ export default function Home() {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.5 }}
-              className="font-sans text-uf-body text-xl leading-relaxed mb-9 max-w-[480px]"
+              className="font-sans text-[#F1F5F9] text-xl leading-relaxed mb-9 max-w-[480px]"
+              style={{ textShadow: '0 2px 10px rgba(0, 0, 0, 0.45)' }}
             >
               Traditional auth was built for humans. Unforge gives every agent in your system
               a verifiable, auditable identity — so you always know who acted, on what, and why.
