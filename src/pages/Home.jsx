@@ -120,7 +120,7 @@ export default function Home() {
             >
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                 <a
-                  href="mailto:info@unforge.io?subject=Early%20access%20request"
+                  href="#problem"
                   className="btn-primary"
                 >
                   Learn more
@@ -166,7 +166,7 @@ export default function Home() {
       </section>
 
       {/* ── PROBLEM ───────────────────────────────────────────────────── */}
-      <section className="bg-uf-alt py-28 px-6">
+      <section className="bg-uf-alt py-28 px-6" id="problem">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeUp()} className="text-center mb-14">
             <SectionLabel>The Problem</SectionLabel>
