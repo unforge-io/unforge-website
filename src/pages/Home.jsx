@@ -59,7 +59,7 @@ function AnimatedHeadline() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.45, ease: 'easeOut' }}
-          style={{ display: 'inline-block', overflow: 'visible', padding: '0.1em 0', color: '#1D9E75' }}
+          style={{ display: 'inline-block', overflow: 'visible', padding: '0.1em 0', color: '#2DB485' }}
         >
           {tealWord}
         </motion.span>
@@ -74,11 +74,13 @@ export default function Home() {
     <div className="flex flex-col">
 
       {/* ── HERO ──────────────────────────────────────────────────────── */}
-      <section className="bg-white py-24 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[55%_45%] gap-14 items-center">
+      <section className="relative overflow-hidden py-24 px-6 bg-[url('/unforge_shield.png')] bg-cover bg-center min-h-screen">
+        <div className="absolute inset-0 bg-white/40" />
+        <div className="absolute inset-x-0 bottom-0 h-[70%] bg-gradient-to-t from-[#d8f4ec]/95 via-[#d8f4ec]/55 to-transparent" />
+        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[55%_45%] gap-14 items-start">
 
           {/* Left column */}
-          <div className="flex flex-col">
+          <div className="flex flex-col lg:pt-4">
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: -8 }}
@@ -103,7 +105,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.5 }}
-              className="font-sans text-uf-body text-lg leading-relaxed mb-9 max-w-[480px]"
+              className="font-sans text-uf-body text-xl leading-relaxed mb-9 max-w-[480px]"
             >
               Traditional auth was built for humans. Unforge gives every agent in your system
               a verifiable, auditable identity — so you always know who acted, on what, and why.
@@ -121,7 +123,7 @@ export default function Home() {
                   href="mailto:info@unforge.io?subject=Early%20access%20request"
                   className="btn-primary"
                 >
-                  Contact us
+                  Learn more
                 </a>
               </motion.div>
             </motion.div>
@@ -143,23 +145,6 @@ export default function Home() {
               ))}
             </motion.div>
           </div>
-
-          {/* Right column — Video */}
-          <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.65, ease: 'easeOut' }}
-          >
-            <video
-              src="/unforge-explainer.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              style={{ width: '100%', borderRadius: '12px', display: 'block', border: '2px solid #1D9E75' }}
-            />
-          </motion.div>
-
         </div>
       </section>
 

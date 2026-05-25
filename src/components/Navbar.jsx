@@ -13,6 +13,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
+  const isHomePage = location.pathname === '/'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -152,8 +153,9 @@ export default function Navbar() {
 
       </div>
 
-      {/* Spacer so content isn't hidden under fixed navbar */}
-      <div className="h-[88px]" />
+      {/* Spacer so content isn't hidden under fixed navbar.
+          Home intentionally has no spacer so the hero image starts at the top. */}
+      <div className={isHomePage ? 'h-0' : 'h-[88px]'} />
     </>
   )
 }
