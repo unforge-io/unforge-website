@@ -180,7 +180,7 @@ export default function Home() {
               transition={{ delay: 1.1, duration: 0.45 }}
               className="flex flex-wrap gap-3 py-3"
             >
-              {['Two U.S. patents filed in 2026 (Application Nos. 19/645,211 and 19/645,431)'].map(badge => (
+              {['Two U.S. patents filed in 2026 (Application Nos. 19/645,221 and 19/645,431)'].map(badge => (
                 <span
                   key={badge}
                   className="font-sans text-xs font-medium text-uf-teal bg-white border border-uf-teal px-3.5 py-1.5 rounded-full"

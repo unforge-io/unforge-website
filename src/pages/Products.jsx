@@ -157,7 +157,7 @@ export default function Products() {
                 'Under 20ms total security overhead per API call',
                 'Full backward compatibility with OAuth 2.0 — drop-in deployment',
                 'Integrates with Okta, Auth0, Azure AD, AWS IAM',
-                'Two U.S. patents filed in 2025 (Application Nos. 19/204,492 and 19/315,486)',
+                'Four U.S. patents filed (Application Nos. 19/204,492, 19/315,486, 19/645,221, and 19/645,431)',
               ].map(f => (
                 <div key={f} className="flex items-start gap-3 font-sans text-sm text-uf-body">
                   <span className="text-uf-teal mt-0.5 shrink-0 font-bold">✓</span>
