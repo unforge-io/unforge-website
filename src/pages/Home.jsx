@@ -222,7 +222,7 @@ export default function Home() {
               Traditional auth was not built for agents
             </h2>
             <p className="font-sans text-uf-body max-w-xl mx-auto">
-              OAuth 2.0 was designed for humans and applications. AI agents break every assumption it makes.
+              OAuth 2.0 was designed for humans. AI agents break that assumption.
             </p>
           </motion.div>
 
