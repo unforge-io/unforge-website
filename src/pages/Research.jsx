@@ -332,7 +332,7 @@ export default function Research() {
               Read on arXiv ↗
             </a>
             <a
-              href="https://github.com/hypernome/patchet"
+              href="https://github.com/unforge-io/auth51-console"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline"

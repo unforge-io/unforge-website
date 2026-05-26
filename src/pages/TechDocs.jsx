@@ -433,7 +433,6 @@ export default function TechDocs() {
           <div className="grid sm:grid-cols-3 gap-6">
             {[
               { stat: '18.15ms', label: 'Total security overhead per API call' },
-              { stat: '4695ms',  label: 'Agentic JWT workflow execution time' },
               { stat: '100%',    label: 'Threat mitigation across all STRIDE categories' },
             ].map((item, i) => (
               <motion.div
@@ -467,7 +466,7 @@ export default function TechDocs() {
               Read on arXiv ↗
             </a>
             <a
-              href="https://github.com/hypernome/patchet"
+              href="https://github.com/unforge-io/auth51-console"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline"

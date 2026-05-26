@@ -49,7 +49,7 @@ export default function Footer() {
               <li><Link to="/docs" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">Technical Docs</Link></li>
               <li>
                 <a
-                  href="https://github.com/hypernome/patchet"
+                  href="https://github.com/unforge-io/auth51-console"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-sans text-sm text-uf-muted hover:text-white transition-colors"
@@ -60,7 +60,7 @@ export default function Footer() {
               {/* <li><Link to="/dashboard" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">API Keys</Link></li> */}
               <li>
                 <a
-                  href="https://auth51-console.vercel.app/console"
+                  href="https://auth51.com/console"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-sans text-sm text-uf-muted hover:text-white transition-colors"

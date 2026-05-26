@@ -52,7 +52,7 @@ export default function Products() {
               </motion.div>
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="sm:flex-1">
                 <a
-                  href="https://auth51-console.vercel.app/console"
+                  href="https://auth51.com/console"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline w-full sm:min-w-[11rem] justify-center"
