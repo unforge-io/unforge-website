@@ -110,12 +110,14 @@ export default function TechDocs() {
             <p className="font-syne font-semibold text-sm text-uf-navy mb-3 uppercase tracking-wide">
               Securing the AI Workforce
             </p>
-            <video
-              ref={videoRef}
-              src="/Securing_the_AI_Workforce.mp4"
-              controls
-              style={{ width: '100%', maxWidth: '900px', borderRadius: '12px', display: 'block', margin: '0 auto' }}
-            />
+            <div className="w-full max-w-[900px] mx-auto aspect-video">
+              <video
+                ref={videoRef}
+                src="/Securing_the_AI_Workforce.mp4"
+                controls
+                className="w-full h-full rounded-[12px] block"
+              />
+            </div>
           </motion.div>
         </div>
       </section>
@@ -418,35 +420,57 @@ export default function TechDocs() {
         </div>
       </section>
 
-      {/* ── PERFORMANCE ───────────────────────────────────────────────── */}
-      <section className="bg-uf-alt py-24 px-6">
+      {/* ── PATENTS ────────────────────────────────────────────────────── */}
+      <section className="bg-uf-alt py-24 px-6 border-t border-uf-border" id="patents">
         <div className="max-w-4xl mx-auto">
           <motion.div {...fadeUp()} className="mb-12">
             <h2
               className="font-syne font-bold text-2xl md:text-3xl text-uf-navy"
               style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
             >
-              Performance Results
+              Pending Patents
             </h2>
           </motion.div>
 
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div className="space-y-6">
             {[
-              { stat: '18.15ms', label: 'Total security overhead per API call' },
-              { stat: '100%',    label: 'Threat mitigation across all STRIDE categories' },
+              {
+                num: 1,
+                title: 'U.S. Patent Application No. 19/204,492',
+              },
+              {
+                num: 2,
+                title: 'U.S. Patent Application No. 19/315,486',
+              },
+              {
+                num: 3,
+                title: 'U.S. Patent Application No. 19/645,221',
+              },
+              {
+                num: 4,
+                title: 'U.S. Patent Application No. 19/645,431',
+              },
             ].map((item, i) => (
               <motion.div
-                key={item.label}
-                {...fadeUp(i * 0.1)}
-                className="card-white rounded-xl p-8 text-center"
+                key={item.num}
+                {...fadeUp(i * 0.08)}
+                whileHover={{ y: -3, boxShadow: '0 8px 24px rgba(0,0,0,0.09)' }}
+                className="card-white rounded-xl p-8 flex gap-6 transition-all duration-300"
               >
                 <div
-                  className="font-syne font-bold text-4xl text-uf-teal mb-3"
-                  style={{ lineHeight: 1.4, paddingBottom: '0.2em' }}
+                  className="font-syne font-bold text-3xl text-uf-teal shrink-0 select-none"
+                  style={{ lineHeight: 1, paddingBottom: '0.2em' }}
                 >
-                  {item.stat}
+                  {item.num}
                 </div>
-                <p className="font-sans text-sm text-uf-body leading-relaxed">{item.label}</p>
+                <div>
+                  <h3
+                    className="font-syne font-semibold text-lg text-uf-navy mb-2"
+                    style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
+                  >
+                    {item.title}
+                  </h3>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -479,7 +503,6 @@ export default function TechDocs() {
           </motion.div>
         </div>
       </section>
-
     </div>
   )
 }

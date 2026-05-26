@@ -145,7 +145,14 @@ export default function Home() {
               {[
                 {
                   key: 'patents',
-                  content: 'Two U.S. patents filed in 2025 (Application Nos. 19/204,492 and 19/315,486)',
+                  content: (
+                      <a
+                        href="/docs#patents"
+                        className="underline hover:no-underline"
+                      >
+                        Four patents pending
+                      </a>
+                  ),
                 },
                 {
                   key: 'stride',
@@ -170,22 +177,6 @@ export default function Home() {
                   className="font-sans text-xs font-medium text-uf-teal bg-white border border-uf-teal px-3.5 py-1.5 rounded-full"
                 >
                   {badge.content}
-                </span>
-              ))}
-            </motion.div>
-            {/* Trust badges */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.1, duration: 0.45 }}
-              className="flex flex-wrap gap-3 py-3"
-            >
-              {['Two U.S. patents filed in 2026 (Application Nos. 19/645,221 and 19/645,431)'].map(badge => (
-                <span
-                  key={badge}
-                  className="font-sans text-xs font-medium text-uf-teal bg-white border border-uf-teal px-3.5 py-1.5 rounded-full"
-                >
-                  {badge}
                 </span>
               ))}
             </motion.div>
@@ -365,7 +356,7 @@ export default function Home() {
               className="font-syne font-bold text-3xl md:text-4xl text-uf-navy mt-5"
               style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
             >
-              Built for both teams developing agentic systems and building APIs
+              Designed for enterprises developing agentic systems and APIs
             </h2>
           </motion.div>
 
