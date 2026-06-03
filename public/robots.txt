@@ -4,4 +4,4 @@ Disallow: /login
 Disallow: /signup
 Disallow: /dashboard
 
-Sitemap: https://unforge.io/sitemap.xml
+Sitemap: https://www.unforge.io/sitemap.xml
