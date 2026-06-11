@@ -50,7 +50,7 @@ const COFOUNDERS = [
   },
   {
     name: 'Abhishek Goswami',
-    role: 'Co-Founder & Co-Investor',
+    role: 'Co-Investor',
     badges: ['Senior Member IEEE', 'MBA · University of Chicago Booth'],
     bio: 'Author of the Agentic JWT protocol and US Patent 19/315,486. 20 years across enterprise architecture, AI, and cybersecurity spanning Power and Energy, Banking, and Healthcare industries.',
     highlights: [
