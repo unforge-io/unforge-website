@@ -268,14 +268,14 @@ export default function Company() {
           </motion.div>
 
           {/* Co-Founders */}
-          <motion.div {...fadeUp(0.05)} className="mb-8 mt-10">
+          <!--motion.div {...fadeUp(0.05)} className="mb-8 mt-10">
             <h3
               className="font-syne font-bold text-xl text-uf-navy"
               style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
             >
               Co-Founders
             </h3>
-          </motion.div>
+          </motion.div-->
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {COFOUNDERS.map((person, i) => (
@@ -331,14 +331,14 @@ export default function Company() {
           </div>
 
           {/* Founding Members */}
-          <motion.div {...fadeUp(0.1)} className="mb-8">
+          <!--motion.div {...fadeUp(0.1)} className="mb-8">
             <h3
               className="font-syne font-bold text-xl text-uf-navy"
               style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
             >
               Founding Members
             </h3>
-          </motion.div>
+          </motion.div-->
 
           <div className="grid sm:grid-cols-3 gap-6">
             {FOUNDING_MEMBERS.map((person, i) => (
