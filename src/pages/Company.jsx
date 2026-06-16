@@ -21,7 +21,7 @@ const COFOUNDERS = [
   },
   {
     name: 'Abhishek Goswami',
-    role: 'Co-Founder & Co-Investor',
+    role: 'Co-Investor',
     badges: ['Senior Member IEEE', 'MBA · University of Chicago Booth'],
     bio: 'Author of the Agentic JWT protocol and two U.S. patents filed in 2025. 20 years across enterprise architecture, AI, and cybersecurity spanning Power and Energy, Banking, and Healthcare industries.',
     highlights: [
@@ -267,7 +267,7 @@ export default function Company() {
             </h2>
           </motion.div>
 
-          {/* Co-Founders */}
+          {/* Co-Founders
           <motion.div {...fadeUp(0.05)} className="mb-8 mt-10">
             <h3
               className="font-syne font-bold text-xl text-uf-navy"
@@ -276,7 +276,8 @@ export default function Company() {
               Co-Founders
             </h3>
           </motion.div>
-
+           */}
+  
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {COFOUNDERS.map((person, i) => (
               <motion.div
@@ -330,7 +331,7 @@ export default function Company() {
             ))}
           </div>
 
-          {/* Founding Members */}
+          {/* Founding Members
           <motion.div {...fadeUp(0.1)} className="mb-8">
             <h3
               className="font-syne font-bold text-xl text-uf-navy"
@@ -339,6 +340,7 @@ export default function Company() {
               Founding Members
             </h3>
           </motion.div>
+           */}
 
           <div className="grid sm:grid-cols-3 gap-6">
             {FOUNDING_MEMBERS.map((person, i) => (
