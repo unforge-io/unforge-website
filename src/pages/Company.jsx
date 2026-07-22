@@ -37,6 +37,7 @@ const FOUNDING_MEMBERS = [
   { name: 'Neil Das',   role: 'Founding Member' },
   { name: 'Jason Liao', role: 'Founding Member' },
   { name: 'Addison Thurston', role: 'Founding Member' },
+  { name: 'Arav Deb', role: 'Founding Member' },
 ]
 
 const ADVISORS = [
