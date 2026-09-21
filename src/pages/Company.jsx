@@ -19,22 +19,27 @@ const COFOUNDERS = [
       "Driving force behind Unforge's focus on secure agent-driven identity solutions",
     ],
   },
-  {
-    name: 'Abhishek Goswami',
-    role: 'Co-Investor',
-    badges: ['Senior Member IEEE', 'MBA · University of Chicago Booth'],
-    bio: 'Author of the Agentic JWT protocol and two U.S. patents filed in 2025. 20 years across enterprise architecture, AI, and cybersecurity spanning Power and Energy, Banking, and Healthcare industries.',
-    highlights: [
-      'Author of Agentic JWT — arXiv:2509.13597',
-      'Two U.S. patents filed in 2025 (Application Nos. 19/204,492 and 19/315,486)',
-      'Eta Kappa Nu IEEE Honor Society (HKN)',
-    ],
-  },
+
+  /**
+     * {
+      name: 'Abhishek Goswami',
+      role: 'Co-Investor',
+      badges: ['Senior Member IEEE', 'MBA · University of Chicago Booth'],
+      bio: 'Author of the Agentic JWT protocol and two U.S. patents filed in 2025. 20 years across enterprise architecture, AI, and cybersecurity spanning Power and Energy, Banking, and Healthcare industries.',
+      highlights: [
+        'Author of Agentic JWT — arXiv:2509.13597',
+        'Two U.S. patents filed in 2025 (Application Nos. 19/204,492 and 19/315,486)',
+        'Eta Kappa Nu IEEE Honor Society (HKN)',
+      ],
+    },
+   * 
+   */
+
 ]
 
 const FOUNDING_MEMBERS = [
-  { name: 'Rahul K',    role: 'Founding Member' },
-  { name: 'Neil Das',   role: 'Founding Member' },
+  { name: 'Rahul K', role: 'Founding Member' },
+  { name: 'Neil Das', role: 'Founding Member' },
   { name: 'Jason Liao', role: 'Founding Member' },
   { name: 'Addison Thurston', role: 'Founding Member' },
   { name: 'Arav Deb', role: 'Founding Member' },
@@ -278,7 +283,7 @@ export default function Company() {
             </h3>
           </motion.div>
            */}
-  
+
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {COFOUNDERS.map((person, i) => (
               <motion.div
@@ -373,7 +378,8 @@ export default function Company() {
       </section>
 
       {/* ── ADVISORS ──────────────────────────────────────────────────── */}
-      <section className="bg-white py-24 px-6">
+      {/**
+       * <section className="bg-white py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeUp()} className="mb-10">
             <span className="section-label">Advisors</span>
@@ -414,6 +420,9 @@ export default function Company() {
           </div>
         </div>
       </section>
+       * 
+       */}
+
 
     </div>
   )
