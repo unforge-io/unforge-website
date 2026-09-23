@@ -15,7 +15,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="font-sans text-sm text-uf-muted leading-relaxed max-w-xs">
-              Security infrastructure for the agentic era.
+              The company behind Auth51. Runtime identity and per-action authorization for AI agents.
             </p>
           </div>
 
@@ -46,7 +46,17 @@ export default function Footer() {
               Developers
             </h4>
             <ul className="flex flex-col gap-2.5">
-              <li><Link to="/docs" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">Technical Docs</Link></li>
+              <li><Link to="/docs" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">Publications</Link></li>
+              <li>
+                <a
+                  href="https://auth51.com/docs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-sans text-sm text-uf-muted hover:text-white transition-colors"
+                >
+                  Auth51 docs
+                </a>
+              </li>
               <li>
                 <a
                   href="https://github.com/unforge-io/auth51-console"
@@ -54,10 +64,9 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="font-sans text-sm text-uf-muted hover:text-white transition-colors"
                 >
-                  GitHub
+                  Console repository
                 </a>
               </li>
-              {/* <li><Link to="/dashboard" className="font-sans text-sm text-uf-muted hover:text-white transition-colors">API Keys</Link></li> */}
               <li>
                 <a
                   href="https://auth51.com/console"

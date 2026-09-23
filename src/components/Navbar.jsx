@@ -76,7 +76,7 @@ export default function Navbar() {
             </motion.a>
             {/* Contact us — desktop */}
             <motion.a
-              href="mailto:info@unforge.io?subject=Early%20access%20request"
+              href="mailto:info@unforge.io?subject=Contact%20Unforge"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="hidden md:inline-flex items-center justify-center font-sans text-sm font-semibold px-4 py-2 rounded-xl bg-uf-teal text-white transition-colors duration-150 hover:bg-[#178a64]"
@@ -140,7 +140,7 @@ export default function Navbar() {
                 ))}
                 <div className="mt-3 pt-3 border-t border-white/10">
                   <a
-                    href="mailto:info@unforge.io?subject=Early%20access%20request"
+                    href="mailto:info@unforge.io?subject=Contact%20Unforge"
                     className="block w-full text-center font-sans text-sm font-semibold px-4 py-2.5 rounded-xl bg-uf-teal text-white hover:bg-[#178a64] transition-colors"
                   >
                     Contact us

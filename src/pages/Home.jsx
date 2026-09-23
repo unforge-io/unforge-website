@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
-/* ─── helpers ─────────────────────────────────────────────────────────── */
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
@@ -17,11 +16,9 @@ function SectionLabel({ children }) {
   )
 }
 
-/* ─── Word-by-word animated headline ─────────────────────────────────── */
 function AnimatedHeadline() {
-  const line1 = ['Auth', 'built', 'for', 'agents']
-  const line2 = ['that', 'actually']
-  const tealWord = 'works.'
+  const line1 = ['The', 'company', 'behind']
+  const accent = 'Auth51'
 
   return (
     <h1
@@ -34,7 +31,6 @@ function AnimatedHeadline() {
         textShadow: '0 3px 14px rgba(0, 0, 0, 0.5)',
       }}
     >
-      {/* Line 1 */}
       <span className="block" style={{ overflow: 'visible' }}>
         {line1.map((word, i) => (
           <motion.span
@@ -48,46 +44,37 @@ function AnimatedHeadline() {
           </motion.span>
         ))}
       </span>
-      {/* Line 2 */}
       <span className="block" style={{ overflow: 'visible' }}>
-        {line2.map((word, i) => (
-          <motion.span
-            key={word + i}
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 + i * 0.1, duration: 0.45, ease: 'easeOut' }}
-            style={{ display: 'inline-block', overflow: 'visible', padding: '0.1em 0', marginRight: '0.28em' }}
-          >
-            {word}
-          </motion.span>
-        ))}
         <motion.span
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.45, ease: 'easeOut' }}
+          transition={{ delay: 0.45, duration: 0.45, ease: 'easeOut' }}
           style={{ display: 'inline-block', overflow: 'visible', padding: '0.1em 0', color: '#5EEAD4' }}
         >
-          {tealWord}
+          {accent}
         </motion.span>
       </span>
     </h1>
   )
 }
 
-/* ─── Page ────────────────────────────────────────────────────────────── */
+const ENFORCEMENT = [
+  { step: 'Observe', body: 'The Runtime fingerprints the executing agent from its prompt, tools, and configuration.' },
+  { step: 'Authorize', body: 'The Authority checks that identity and the grant before a token is minted.' },
+  { step: 'Bind', body: 'A per-action intent token carries the signed claims for this call.' },
+  { step: 'Enforce', body: 'The Verifier checks those claims at the resource.' },
+]
+
 export default function Home() {
   return (
     <div className="flex flex-col">
 
-      {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden py-24 px-6 bg-[url('/hero.png')] bg-cover bg-center min-h-screen">
         <div className="absolute inset-0 bg-white/10" />
         <div className="absolute inset-x-0 bottom-0 h-[70%] bg-gradient-to-t from-[#d8f4ec]/75 via-[#d8f4ec]/35 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[55%_45%] gap-14 items-start">
 
-          {/* Left column */}
           <div className="flex flex-col lg:pt-4">
-            {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
@@ -99,97 +86,73 @@ export default function Home() {
                   <span className="pulse-dot absolute inline-flex h-full w-full rounded-full bg-white/70" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
                 </span>
-                Agentic JWT · Open Standard
+                Runtime identity · Per-agent & per-action authorization
               </span>
             </motion.div>
 
-            {/* Animated headline */}
             <AnimatedHeadline />
 
-            {/* Subheadline */}
             <motion.p
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.5 }}
+              transition={{ delay: 0.7, duration: 0.5 }}
               className="font-sans text-[#F1F5F9] text-xl leading-relaxed mb-9 max-w-[480px]"
               style={{ textShadow: '0 2px 10px rgba(0, 0, 0, 0.45)' }}
             >
-              Traditional auth was built for humans. Unforge gives every agent in your system
-              a verifiable, auditable identity — so you always know who acted, on what, and why.
+              Unforge builds enforceable runtime identity and per-action authorization for AI agents.
+              Identity is derived from the running agent's fingerprint, and each action is checked at the resource.
             </motion.p>
 
-            {/* CTA buttons */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.95, duration: 0.45 }}
+              transition={{ delay: 0.85, duration: 0.45 }}
               className="flex flex-wrap gap-3 mb-7"
             >
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <a
-                  href="#problem"
-                  className="btn-primary"
-                >
+                <a href="#problem" className="btn-primary">
                   Learn more
+                </a>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <a
+                  href="https://auth51.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-outline bg-white hover:bg-[#6366f1] hover:border-[#6366f1] hover:text-white"
+                >
+                  See Auth51
                 </a>
               </motion.div>
             </motion.div>
 
-            {/* Trust badges */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.1, duration: 0.45 }}
+              transition={{ delay: 1.05, duration: 0.45 }}
               className="flex flex-wrap gap-3"
             >
-              {[
-                {
-                  key: 'patents',
-                  content: (
-                      <a
-                        href="/docs#patents"
-                        className="underline hover:no-underline"
-                      >
-                        Four patents pending
-                      </a>
-                  ),
-                },
-                {
-                  key: 'stride',
-                  content: (
-                    <>
-                      100%{' '}
-                      <a
-                        href="https://en.wikipedia.org/wiki/STRIDE_model"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline hover:no-underline"
-                      >
-                        STRIDE
-                      </a>{' '}
-                      Coverage
-                    </>
-                  ),
-                },
-              ].map(badge => (
-                <span
-                  key={badge.key}
-                  className="font-sans text-xs font-medium text-uf-teal bg-white border border-uf-teal px-3.5 py-1.5 rounded-full"
-                >
-                  {badge.content}
-                </span>
-              ))}
+              <span className="font-sans text-xs font-medium text-uf-teal bg-white border border-uf-teal px-3.5 py-1.5 rounded-full">
+                <a href="/docs#patents" className="underline hover:no-underline">
+                  Four patents pending
+                </a>
+              </span>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ── TRUST BAR ─────────────────────────────────────────────────── */}
       <section className="bg-uf-alt border-y border-uf-border py-10 px-6">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
-          <span className="font-sans text-sm text-uf-muted shrink-0">Built on standards from</span>
+          <span className="font-sans text-sm text-uf-muted shrink-0">Built on</span>
           <div className="flex flex-wrap gap-3 items-center">
-            {['OAuth 2.0', 'NIST SP 800-207', 'OWASP Top 10', 'IETF RFC 6749'].map(s => (
+            {[
+              'OAuth 2.0',
+              'Token exchange · RFC 8693',
+              'DPoP · RFC 9449',
+              'NIST SP 800-207',
+              'Agentic JWT Internet-Draft',
+            ].map(s => (
               <span
                 key={s}
                 className="font-sans text-xs font-medium text-uf-teal bg-white border border-uf-teal px-3.5 py-1.5 rounded-full"
@@ -201,7 +164,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── PROBLEM ───────────────────────────────────────────────────── */}
       <section className="bg-uf-alt py-28 px-6" id="problem">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeUp()} className="text-center mb-14">
@@ -210,10 +172,10 @@ export default function Home() {
               className="font-syne font-bold text-3xl md:text-4xl text-uf-navy mt-5 mb-4"
               style={{ lineHeight: 1.4, paddingBottom: '0.1em', overflow: 'visible' }}
             >
-              Traditional auth was not built for agents
+              OAuth was built for clients, not agents
             </h2>
             <p className="font-sans text-uf-body max-w-xl mx-auto">
-              OAuth 2.0 was designed for humans. AI agents break that assumption.
+              A valid token never says which agent is acting, or which action this call is part of. That fact makes agents vulnerable to impersonation and misuse.
             </p>
           </motion.div>
 
@@ -221,18 +183,18 @@ export default function Home() {
             {[
               {
                 num: '01',
-                title: 'Agents have no identity',
-                body: 'OAuth tokens identify applications, not individual agents. When an orchestrator spawns subagents they all share one client_id. When something goes wrong, you cannot know which agent did it.',
+                title: 'No per-agent identity',
+                body: 'OAuth identifies the application, not the agent. An orchestrator and its sub-agents can share one client_id, so a token can\'t tell which agent acted.',
               },
               {
                 num: '02',
-                title: 'Intent and execution are separated',
-                body: 'LLM-driven agents make decisions non-deterministically. A scope cannot constrain what an agent does at runtime. Prompt injection can silently redirect any agent to arbitrary actions.',
+                title: 'The intent vs. execution gap',
+                body: 'A scope describes what a client may do. An agent chooses its actions at runtime. The token doesn\'t record which action this call is, so a hijacked plan can still look authorized.',
               },
               {
                 num: '03',
-                title: 'Delegation chains are invisible',
-                body: 'When Agent A delegates to Agent B which delegates to Agent C, there is no cryptographic record of who authorized what. Every handoff is a blind trust assumption.',
+                title: 'Delegation OAuth does not enforce',
+                body: 'When one agent hands work to another, OAuth doesn\'t bind that chain to the token. Each handoff is a trust assumption the resource server cannot check.',
               },
             ].map((card, i) => (
               <motion.div
@@ -262,7 +224,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── PRODUCT ──────────────────────────────────────────────────── */}
       <section className="bg-white py-28 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeUp()} className="text-center mb-20">
@@ -271,12 +232,11 @@ export default function Home() {
               className="font-syne font-bold text-3xl md:text-4xl text-uf-navy mt-5"
               style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
             >
-              Security infrastructure for the agentic era
+              Runtime identity, enforced at the resource
             </h2>
           </motion.div>
 
-          {/* Auth51 */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div {...fadeUp(0.1)}>
               <h2
                 className="font-syne font-bold text-4xl md:text-5xl text-uf-navy mb-4"
@@ -285,23 +245,13 @@ export default function Home() {
                 Auth51
               </h2>
               <p className="font-sans text-uf-body text-lg leading-relaxed mb-6">
-                Implements the Agentic JWT protocol commercially. Gives every AI agent a cryptographic
-                identity via <code className="font-mono text-sm bg-uf-alt px-1.5 py-0.5 rounded text-uf-teal">agent_checksum</code>.
-                Issues Intent Tokens binding each API call to an approved workflow step.
+                Auth51 doesn't trust an agent to declare its own identity. The Runtime derives a
+                checksum from the agent's prompt, tools, and configuration. The Authority mints a
+                per-action intent token. The Verifier enforces it at the resource.
               </p>
-              <ul className="space-y-3 mb-8">
-                {[
-                  'Blocks agent impersonation, prompt injection, token replay, scope inflation, and privilege escalation',
-                  'Under 20ms overhead',
-                  'Compatible with Okta, Auth0, Azure AD',
-                  '100% backward compatible with OAuth 2.0',
-                ].map(f => (
-                  <li key={f} className="flex items-start gap-3 font-sans text-sm text-uf-body">
-                    <span className="text-uf-teal mt-0.5 shrink-0 font-bold">✓</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
+              <p className="font-sans text-uf-body leading-relaxed mb-8">
+                It is built on OAuth 2.0 and is backwards compatible with existing OAuth resource servers.
+              </p>
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
                 <Link to="/products" className="btn-primary">
                   Learn more →
@@ -309,45 +259,23 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Code block */}
-            <motion.div {...fadeUp(0.2)}>
-              <div
-                className="rounded-xl"
-                style={{ background: '#0A0F1E', border: '1px solid #1a2540', overflow: 'visible' }}
-              >
-                {/* Window chrome */}
-                <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/10">
-                  <span className="w-3 h-3 rounded-full bg-red-400" />
-                  <span className="w-3 h-3 rounded-full bg-yellow-400" />
-                  <span className="w-3 h-3 rounded-full bg-green-400" />
-                  <span className="ml-3 font-mono text-xs text-white/40">intent-token.json</span>
+            <motion.div {...fadeUp(0.2)} className="grid sm:grid-cols-2 gap-4">
+              {ENFORCEMENT.map(item => (
+                <div key={item.step} className="card-white rounded-xl p-6">
+                  <h3
+                    className="font-syne font-semibold text-base text-uf-navy mb-2"
+                    style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
+                  >
+                    {item.step}
+                  </h3>
+                  <p className="font-sans text-sm text-uf-body leading-relaxed">{item.body}</p>
                 </div>
-                <pre className="font-mono text-xs leading-6 p-6 overflow-x-auto text-white/80">
-                  <span className="text-white/40">{'{'}</span>{'\n'}
-                  {'  '}<span className="text-uf-teal">"intent"</span><span className="text-white/40">: {'{'}</span>{'\n'}
-                  {'    '}<span className="text-uf-teal">"workflow_id"</span><span className="text-white/40">:        </span><span className="text-yellow-300">"wf_deploy_0xf4a2"</span><span className="text-white/40">,</span>{'\n'}
-                  {'    '}<span className="text-uf-teal">"workflow_step"</span><span className="text-white/40">:      </span><span className="text-yellow-300">"validate_build"</span><span className="text-white/40">,</span>{'\n'}
-                  {'    '}<span className="text-uf-teal">"executed_by"</span><span className="text-white/40">:        </span><span className="text-yellow-300">"agent:code-reviewer-v2"</span><span className="text-white/40">,</span>{'\n'}
-                  {'    '}<span className="text-uf-teal">"delegation_chain"</span><span className="text-white/40">:   [</span>{'\n'}
-                  {'      '}<span className="text-yellow-300">"user:alice"</span><span className="text-white/40">,</span>{'\n'}
-                  {'      '}<span className="text-yellow-300">"agent:orchestrator-v1"</span><span className="text-white/40">,</span>{'\n'}
-                  {'      '}<span className="text-yellow-300">"agent:code-reviewer-v2"</span>{'\n'}
-                  {'    '}<span className="text-white/40">],</span>{'\n'}
-                  {'    '}<span className="text-uf-teal">"step_sequence_hash"</span><span className="text-white/40">: </span><span className="text-yellow-300">"sha256:9f8e7d6c..."</span>{'\n'}
-                  {'  '}<span className="text-white/40">'{'}'},</span>{'\n'}
-                  {'  '}<span className="text-uf-teal">"agent_proof"</span><span className="text-white/40">: {'{'}</span>{'\n'}
-                  {'    '}<span className="text-uf-teal">"agent_checksum"</span><span className="text-white/40">:   </span><span className="text-yellow-300">"sha256:3a2b1c0d..."</span><span className="text-white/40">,</span>{'\n'}
-                  {'    '}<span className="text-uf-teal">"registration_id"</span><span className="text-white/40">:  </span><span className="text-yellow-300">"reg_7x9y2z"</span>{'\n'}
-                  {'  '}<span className="text-white/40">{'}'}</span>{'\n'}
-                  <span className="text-white/40">{'}'}</span>
-                </pre>
-              </div>
+              ))}
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ── WHO IT'S FOR ──────────────────────────────────────────────── */}
       <section className="bg-uf-alt py-28 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeUp()} className="text-center mb-14">
@@ -356,23 +284,23 @@ export default function Home() {
               className="font-syne font-bold text-3xl md:text-4xl text-uf-navy mt-5"
               style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
             >
-              Designed for enterprises developing agentic systems and APIs
+              Teams running agents within real systems
             </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                role: 'Security Engineers',
-                body: 'You need cryptographic proof of which agent accessed what — not log guesswork. Auth51 gives you a complete, unforgeable audit trail for every agentic API call.',
+                role: 'Security teams',
+                body: 'You need proof of which agent took which action. Auth51 gives you a complete, unforgeable audit trail for every agentic API call.',
               },
               {
-                role: 'Platform Teams',
-                body: 'You need identity isolation between agents running in the same process space. Auth51\'s agent_checksum ensures no two agents share an identity, even within a single orchestrator.',
+                role: 'Platform teams',
+                body: 'You need agents in the same process to have distinct runtime identities, including ones that were never registered.',
               },
               {
-                role: 'AI Product Teams',
-                body: 'You need API calls bound to user intent so prompt injection cannot escalate agent permissions. Intent Tokens enforce exactly that at the protocol level.',
+                role: 'Agent product teams',
+                body: 'You need each action bound to intent, so a prompt injection cannot spend a broad scope as if it were approved.',
               },
             ].map((item, i) => (
               <motion.div
@@ -396,39 +324,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── EARLY ACCESS ──────────────────────────────────────────────── */}
       <section className="bg-white py-28 px-6">
         <div className="max-w-2xl mx-auto text-center">
           <motion.div {...fadeUp()}>
-            <SectionLabel>Private Beta</SectionLabel>
+            <SectionLabel>Contact</SectionLabel>
             <h2
               className="font-syne font-bold text-3xl md:text-4xl text-uf-navy mt-5 mb-4"
               style={{ lineHeight: 1.4, paddingBottom: '0.1em' }}
             >
-              Join the waitlist.
+              Talk with Unforge today.
             </h2>
             <p className="font-sans text-uf-body text-lg mb-10">
-              Auth51 is in private beta. Request early access for your team.
+              Auth51 is available in the console. For a conversation about your environment, contact us.
             </p>
           </motion.div>
 
-          <motion.div
-            {...fadeUp(0.15)}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-block"
-          >
-            <a
-              href="mailto:info@unforge.io?subject=Early%20access%20request"
-              className="btn-primary"
-            >
-              Request early access
-            </a>
+          <motion.div {...fadeUp(0.15)} className="flex flex-wrap gap-3 justify-center">
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <a
+                href="https://auth51.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary hover:bg-[#6366f1] hover:outline"
+              >
+                See Auth51
+              </a>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <a
+                href="mailto:info@unforge.io?subject=Contact%20Unforge"
+                className="btn-outline"
+              >
+                Contact us
+              </a>
+            </motion.div>
           </motion.div>
-
-          <motion.p {...fadeUp(0.25)} className="font-sans text-xs text-uf-muted mt-5">
-            No spam. We'll reach out when your spot is ready.
-          </motion.p>
         </div>
       </section>
 
