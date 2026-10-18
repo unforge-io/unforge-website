@@ -185,8 +185,8 @@ export default function Products() {
               Built on OAuth, not beside it
             </h2>
             <p className="font-sans text-uf-body text-lg leading-relaxed max-w-3xl">
-              Auth51 works with existing OAuth resource servers, alongside identity providers such as
-              Okta, Auth0, and Microsoft Entra ID.
+              Auth51 is backwards compatible with OAuth resource servers, alongside identity providers such as
+              Okta, Auth0, and Microsoft Entra ID, no rip and replace needed.
             </p>
           </motion.div>
 
