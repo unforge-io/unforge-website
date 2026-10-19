@@ -17,8 +17,9 @@ function SectionLabel({ children }) {
 }
 
 function AnimatedHeadline() {
-  const line1 = ['The', 'company', 'behind']
-  const accent = 'Auth51'
+  const line1 = ['Auth', 'built', 'for', 'agents']
+  const line2 = ['that', 'actually']
+  const accent = 'works.'
 
   return (
     <h1
@@ -45,6 +46,17 @@ function AnimatedHeadline() {
         ))}
       </span>
       <span className="block" style={{ overflow: 'visible' }}>
+         {line2.map((word, i) => (
+          <motion.span
+            key={word + i}
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 + i * 0.1, duration: 0.45, ease: 'easeOut' }}
+            style={{ display: 'inline-block', overflow: 'visible', padding: '0.1em 0', marginRight: '0.28em' }}
+          >
+            {word}
+          </motion.span>
+        ))}
         <motion.span
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
