@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 const fadeUp = (delay = 0) => ({
@@ -60,7 +61,7 @@ function AnimatedHeadline() {
         <motion.span
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.45, duration: 0.45, ease: 'easeOut' }}
+          transition={{ delay: 0.8, duration: 0.45, ease: 'easeOut' }}
           style={{ display: 'inline-block', overflow: 'visible', padding: '0.1em 0', color: '#5EEAD4' }}
         >
           {accent}
@@ -78,10 +79,26 @@ const ENFORCEMENT = [
 ]
 
 export default function Home() {
+  const [heroLoaded, setHeroLoaded] = useState(false)
+
+  useEffect(() => {
+    const img = new Image()
+    img.src = '/hero.png'
+    img.onload = () => setHeroLoaded(true)
+  }, [])
+
   return (
     <div className="flex flex-col">
 
-      <section className="relative overflow-hidden py-24 px-6 bg-[url('/hero.png')] bg-cover bg-center min-h-screen">
+      <section className="relative overflow-hidden py-24 px-6 min-h-screen">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/hero_preload.png')", filter: 'blur(20px)', transform: 'scale(1.1)' }}
+        />
+        <div
+          className="absolute inset-0 bg-cover bg-center transition-opacity duration-700 ease-in-out"
+          style={{ backgroundImage: "url('/hero.png')", opacity: heroLoaded ? 1 : 0 }}
+        />
         <div className="absolute inset-0 bg-white/10" />
         <div className="absolute inset-x-0 bottom-0 h-[70%] bg-gradient-to-t from-[#d8f4ec]/75 via-[#d8f4ec]/35 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[55%_45%] gap-14 items-start">
